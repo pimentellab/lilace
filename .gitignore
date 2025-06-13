@@ -7,6 +7,8 @@ inst/doc
 .httr-oauth
 .DS_Store
 .quarto
+inst/stan/lilace
+inst/stan/lilace_nopos
 vignettes/output
 vignettes/output_nopos
 vignettes/output_no_nc_correction
