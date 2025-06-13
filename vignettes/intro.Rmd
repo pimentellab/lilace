@@ -213,7 +213,8 @@ Here, we provide an example of formatting from multiple input files where the co
 ![Separate file counts example format](sep_file_counts.png){width=60%}
 
 ```{r, message=FALSE}
-# input files in list format (can add more replicates or bins--make sure they are in order from left to right)
+# input files in list format 
+# (can add more replicates or bins--make sure they are in order from left to right)
 file_list <- list(R1=list(
   system.file("extdata", "multi_input/R1_A.tsv", package="lilace"), # rep 1 bin 1
   system.file("extdata", "multi_input/R1_B.tsv", package="lilace"), # rep 1 bin 2

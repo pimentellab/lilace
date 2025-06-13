@@ -1,4 +1,4 @@
-warn---
+---
 output: github_document
 ---
 
@@ -13,42 +13,39 @@ knitr::opts_chunk$set(
 )
 ```
 
-# lilace
+# Lilace
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of lilace is to ...
+<p align="left">
+  <img src="img/lilace-logo.png" width="150">
+</p>
+
+__Lilace__ is an R package for scoring FACS-based DMS experiments with uncertainty quantification. It takes in a negative control group (usually synonymous variants) and scores each variant relative to the negative control group.
 
 ## Installation
+Lilace relies on [cmdstanr](https://mc-stan.org/cmdstanr/), which should be properly installed first. 
+```{r, eval=FALSE}
+install.packages("cmdstanr", repos = c("https://mc-stan.org/r-packages/", getOption("repos")))
 
-You can install the development version of lilace like so:
-
-``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+# use cmdstanr to install CmdStan, this requires a working C++ toolchain and compiler
+library(cmdstanr)
+install_cmdstan(cores = 2)
 ```
+The compiler requirements can be seen at [stan-dev](https://github.com/stan-dev/stan/wiki/Coding-Style-and-Idioms#supported-cpp-versions-and-compilers). If you run into issues with installation, please ensure your gcc version is > 5.
 
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-```{r example}
+Then, install Lilace from GitHub.
+```{r, eval=FALSE}
+if (!require(remotes)) {
+  install.packages('remotes')
+}
+remotes::install_github("jermoef/lilace")
 library(lilace)
-## basic example code
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+## How to use Lilace
+An introductory vignette can be found at ... If you run into any problems, please submit an issue on github or email jfreudenberg@ucla.edu.
 
-```{r cars}
-summary(cars)
-```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this.
 
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.

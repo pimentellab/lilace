@@ -4,3 +4,6 @@
 ^LICENSE\.md$
 ^inst/stan/lilace$
 ^inst/stan/lilace_nopos$
+^vignettes/output$
+^vignettes/output_nopos$
+^vignettes/output_no_nc_correction$
