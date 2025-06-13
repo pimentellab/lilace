@@ -37,10 +37,10 @@ The compiler requirements can be seen at [stan-dev](https://github.com/stan-dev/
 
 Then, install Lilace from GitHub.
 ```{r, eval=FALSE}
-if (!require(remotes)) {
-  install.packages('remotes')
+if (!requireNamespace("remotes", quietly = TRUE)) {
+  install.packages("remotes")
 }
-remotes::install_github("jermoef/lilace")
+remotes::install_github("pimentellab/lilace")
 library(lilace)
 ```
 

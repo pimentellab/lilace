@@ -53,10 +53,10 @@ cmdstan_version()
 ```
 Now, we can install Lilace from github.
 ```{r, eval = FALSE}
-if (!requireNamespace("devtools", quietly = TRUE)) {
-  install.packages("devtools")
+if (!requireNamespace("remotes", quietly = TRUE)) {
+  install.packages("remotes")
 }
-devtools::install_github("pimentellab/lilace")
+remotes::install_github("pimentellab/lilace")
 library(lilace)
 ```
 

@@ -7,3 +7,6 @@ inst/doc
 .httr-oauth
 .DS_Store
 .quarto
+vignettes/output
+vignettes/output_nopos
+vignettes/output_no_nc_correction

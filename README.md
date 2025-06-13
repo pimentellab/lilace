@@ -35,10 +35,10 @@ is \> 5.
 Then, install Lilace from GitHub.
 
 ``` r
-if (!require(remotes)) {
-  install.packages('remotes')
+if (!requireNamespace("remotes", quietly = TRUE)) {
+  install.packages("remotes")
 }
-remotes::install_github("jermoef/lilace")
+remotes::install_github("pimentellab/lilace")
 library(lilace)
 ```
 
