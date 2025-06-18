@@ -9,13 +9,32 @@
 #' @importFrom stringr str_detect
 NULL
 
+
+#' filter minimum total counts and zero count rows
+#' @param data data
+#' @param min_total_counts minimum total counts for variant
+#' @export
+.filter_data_low_counts <- function(data, min_total_counts=15) {
+  # remove 0 count rows and filter to min total counts
+  n_zero_removed <- nrow(data) - nrow(data[data$n_counts > 0,])
+  if (n_zero_removed > 0) {
+    message(paste("Removing", nrow(data) - nrow(data[data$n_counts > 0,]), "zero count rows"))
+    data <- data[data$n_counts > 0,]
+  }
+  n_less_15 <- sum(data$total_counts<=min_total_counts)
+  if (n_less_15 > 0) {
+    message(paste("Removing", n_less_15, "observations due to less than", min_total_counts, "total counts in the variant."))
+    data <- data[data$total_counts>=min_total_counts,]
+  }
+  return(data)
+}
+
 #' format model input (intended for internal use)
 #' @param data data
 #' @param control_label control label
 #' @param pseudocount logical for pseudocount
-#' @param min_total_counts minimum total counts for variant
 #' @export
-.generate_model_input <- function(data, control_label, pseudocount=F, min_total_counts=15) {
+.generate_model_input <- function(data, control_label, pseudocount=F) {
   # check controls
   if (!(control_label %in% data$type)) {
     stop(paste0("No negative controls with label ", control_label, " in mutation type argument.
@@ -29,17 +48,7 @@ NULL
       stop(paste0("Missing column: ", col))
     }
   }
-  # remove 0 count rows and filter to min total counts
-  n_zero_removed <- nrow(data) - nrow(data[data$n_counts > 0,])
-  if (n_zero_removed > 0) {
-    message(paste("Removing", nrow(data) - nrow(data[data$n_counts > 0,]), "zero count rows"))
-    data <- data[data$n_counts > 0,]
-  }
-  n_less_15 <- sum(data$total_counts<=min_total_counts)
-  if (n_less_15 > 0) {
-    message(paste("Removing", n_less_15, "observations due to less than", min_total_counts, "total counts in the variant."))
-    data <- data[data$total_counts>=min_total_counts,]
-  }
+
   # add pseudocount
   if (pseudocount) {
     data <- data %>% mutate(across(starts_with("c_"), ~ .x + 1))
@@ -57,20 +66,21 @@ NULL
 
   vMAPp <- distinct(data.frame(variant = data$variant, nMAPv = nMAPv, type = data$type, position = data$position)) %>%
     arrange(nMAPv)
+  vMAPp$position <- as.numeric(vMAPp$position)
 
   # group positions if needed
   positions <- sort(unique(vMAPp$position))
   for (i in 1:length(positions)) {
     if (i != length(positions)) {
       if (sum(vMAPp$position == positions[i]) < 10) {
-        message("Grouping positions", positions[i], "with", positions[i+1], "due to less than 10 variants at position.")
+        message("Grouping positions ", positions[i], " with ", positions[i+1], " due to less than 10 variants at position.")
         vMAPp[vMAPp$position == positions[i],]$position <- positions[i+1]
       }
     }
   }
   # ensure end also has 10 variants
   while (sum(vMAPp$position == positions[i]) < 10) {
-    message("Grouping positions", positions[i], "with", positions[i-1], "due to less than 10 variants at position.")
+    message("Grouping positions ", positions[i], " with ", positions[i-1], " due to less than 10 variants at position.")
     vMAPp[vMAPp$position == positions[i],]$position <- positions[i-1]
     i <- i - 1
   }
@@ -259,8 +269,9 @@ lilace_fit_model <- function(lilace_obj, output_dir, control_label="synonymous",
   if (!dir.exists(output_folder)) {
     dir.create(output_folder)
   }
+  data <- .filter_data_low_counts(data, min_total_counts)
 
-  input <- .generate_model_input(data, control_label, pseudocount, min_total_counts)
+  input <- .generate_model_input(data, control_label, pseudocount)
   if (use_positions) {
     model_file <- system.file("stan", "lilace.stan", package="lilace")
     init <- list(list(sigma=rep(1, input$P-1)), list(sigma=rep(1, input$P-1)), list(sigma=rep(1, input$P-1)), list(sigma=rep(1, input$P-1)))
@@ -301,5 +312,7 @@ lilace_fit_model <- function(lilace_obj, output_dir, control_label="synonymous",
   lilace_obj$fitted_data <- fit_df
   lilace_obj <- .get_score_df(lilace_obj, use_positions)
   write_tsv(lilace_obj$scores, file.path(output_folder, "/variant_scores.tsv"))
+
+  closeAllConnections()
   return(lilace_obj)
 }

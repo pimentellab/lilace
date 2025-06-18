@@ -7,3 +7,6 @@
 ^vignettes/output$
 ^vignettes/output_nopos$
 ^vignettes/output_no_nc_correction$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
