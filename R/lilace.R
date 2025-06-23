@@ -279,23 +279,22 @@ lilace_fit_model <- function(lilace_obj, output_dir, control_label="synonymous",
     model_file <- system.file("stan", "lilace_nopos.stan", package="lilace")
     init <- list(list(sigma=rep(1, input$V)), list(sigma=rep(1, input$V)), list(sigma=rep(1, input$V)), list(sigma=rep(1, input$V)))
   }
-  sampling_log <- file(file.path(output_folder, "sampling.log"), open = "wt")
-  sink(sampling_log, type="output")
-  sink(sampling_log, type="message")
   mod <- cmdstan_model(model_file)
   start <- Sys.time()
   fit <- mod$sample(
     data = input,
     chains = 4,
     parallel_chains = n_parallel_chains,
-    refresh = 500,
+    refresh = 250,
     seed = seed,
-    init=init
+    init=init,
+    show_messages=TRUE,
+    show_exceptions=FALSE
   )
   end <- Sys.time()
-  sink(type="message")
-  sink(type="output")
-  close(sampling_log)
+  sink(file.path(output_folder, "sampling.log"))
+  print(fit$output())
+  sink()
   # save posterior samples to output_dir
   samples <- fit$draws(format = "df")
 
