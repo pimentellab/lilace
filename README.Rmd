@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 <!-- badges: end -->
 
 <p align="left">
-  <img src="img/lilace-logo.png" width="150">
+  <img src="man/figures/lilace-logo.png" width="150">
 </p>
 
 __Lilace__ is an R package for scoring FACS-based DMS experiments with uncertainty quantification. It takes in a negative control group (usually synonymous variants) and scores each variant relative to the negative control group.

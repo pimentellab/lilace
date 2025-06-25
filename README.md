@@ -6,7 +6,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 <p align="left">
-<img src="img/lilace-logo.png" width="150">
+<img src="man/figures/lilace-logo.png" width="150">
 </p>
 
 **Lilace** is an R package for scoring FACS-based DMS experiments with
