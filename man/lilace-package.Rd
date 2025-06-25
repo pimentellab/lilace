@@ -8,6 +8,15 @@
 \description{
 A Bayesian hierarchical model for estimating variant effect sizes and uncertainty from FACS-based DMS data.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/jermoef/lilace}
+  \item \url{http://pimentellab.com/lilace/}
+  \item Report bugs at \url{https://github.com/jermoef/lilace/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Jerome Freudenberg \email{jfreudenberg@ucla.edu} (-15792)
 

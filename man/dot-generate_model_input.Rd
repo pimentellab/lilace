@@ -4,12 +4,7 @@
 \alias{.generate_model_input}
 \title{format model input (intended for internal use)}
 \usage{
-.generate_model_input(
-  data,
-  control_label,
-  pseudocount = F,
-  min_total_counts = 15
-)
+.generate_model_input(data, control_label, pseudocount = F)
 }
 \arguments{
 \item{data}{data}
@@ -17,8 +12,6 @@
 \item{control_label}{control label}
 
 \item{pseudocount}{logical for pseudocount}
-
-\item{min_total_counts}{minimum total counts for variant}
 }
 \description{
 format model input (intended for internal use)
