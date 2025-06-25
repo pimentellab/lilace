@@ -45,7 +45,7 @@ library(lilace)
 ```
 
 ## How to use Lilace
-An introductory vignette can be found [here](https://github.com/jermoef/lilace/tree/main/vignettes). If you run into any problems, please submit an issue on github or email jfreudenberg@ucla.edu.
+An introductory vignette can be found [here](https://pimentellab.com/lilace/articles/intro.html). If you run into any problems, please submit an issue on github or email jfreudenberg@ucla.edu.
 
 
 
