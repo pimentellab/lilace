@@ -1,0 +1,24 @@
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>http://pimentellab.com/lilace/404.html</loc></url>
+<url><loc>http://pimentellab.com/lilace/LICENSE-text.html</loc></url>
+<url><loc>http://pimentellab.com/lilace/articles/index.html</loc></url>
+<url><loc>http://pimentellab.com/lilace/articles/intro.html</loc></url>
+<url><loc>http://pimentellab.com/lilace/authors.html</loc></url>
+<url><loc>http://pimentellab.com/lilace/index.html</loc></url>
+<url><loc>http://pimentellab.com/lilace/reference/dot-correct_negative_control.html</loc></url>
+<url><loc>http://pimentellab.com/lilace/reference/dot-filter_data_low_counts.html</loc></url>
+<url><loc>http://pimentellab.com/lilace/reference/dot-generate_model_input.html</loc></url>
+<url><loc>http://pimentellab.com/lilace/reference/dot-get_phi_summary.html</loc></url>
+<url><loc>http://pimentellab.com/lilace/reference/dot-get_score_df.html</loc></url>
+<url><loc>http://pimentellab.com/lilace/reference/dot-summarize_posteriors.html</loc></url>
+<url><loc>http://pimentellab.com/lilace/reference/index.html</loc></url>
+<url><loc>http://pimentellab.com/lilace/reference/lilace-package.html</loc></url>
+<url><loc>http://pimentellab.com/lilace/reference/lilace_fit_model.html</loc></url>
+<url><loc>http://pimentellab.com/lilace/reference/lilace_from_counts.html</loc></url>
+<url><loc>http://pimentellab.com/lilace/reference/lilace_from_enrich.html</loc></url>
+<url><loc>http://pimentellab.com/lilace/reference/lilace_from_files.html</loc></url>
+<url><loc>http://pimentellab.com/lilace/reference/lilace_score_density.html</loc></url>
+<url><loc>http://pimentellab.com/lilace/reference/lilace_score_heatmap.html</loc></url>
+<url><loc>http://pimentellab.com/lilace/reference/lilace_sorting_normalize.html</loc></url>
+</urlset>
+
