@@ -1,7 +1,7 @@
 Package: lilace
 Type: Package
 Title: Analyze FACS-based Deep Mutational Scanning Data
-Version: 0.1.0
+Version: 1.0.0
 Authors@R: person("Jerome", "Freudenberg", email = "jfreudenberg@ucla.edu",
                   role = c("aut", "cre"),
                   comment=c(ORCID=0009-0004-7464-8333))
@@ -29,5 +29,5 @@ Imports:
     yaml
 RoxygenNote: 7.3.2
 VignetteBuilder: knitr
-URL: https://github.com/jermoef/lilace
+URL: https://github.com/jermoef/lilace, http://pimentellab.com/lilace/
 BugReports: https://github.com/jermoef/lilace/issues
