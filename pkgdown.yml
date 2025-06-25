@@ -3,7 +3,7 @@ pkgdown: 2.1.3
 pkgdown_sha: ~
 articles:
   intro: intro.html
-last_built: 2025-06-25T21:02Z
+last_built: 2025-06-25T21:28Z
 urls:
   reference: http://pimentellab.com/lilace/reference
   article: http://pimentellab.com/lilace/articles

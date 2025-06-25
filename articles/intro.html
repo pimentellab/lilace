@@ -301,19 +301,19 @@ outputs for both of these options towards the end of the vignette.</p>
 <span><span class="co">## Chain 1 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
 <span><span class="co">## Chain 3 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
 <span><span class="co">## Chain 4 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 4 finished in 90.2 seconds.</span></span>
+<span><span class="co">## Chain 4 finished in 91.4 seconds.</span></span>
 <span><span class="co">## Chain 1 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 1 finished in 92.5 seconds.</span></span>
+<span><span class="co">## Chain 1 finished in 93.7 seconds.</span></span>
 <span><span class="co">## Chain 3 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 3 finished in 92.6 seconds.</span></span>
+<span><span class="co">## Chain 3 finished in 93.9 seconds.</span></span>
 <span><span class="co">## Chain 2 Iteration: 1500 / 2000 [ 75%]  (Sampling) </span></span>
 <span><span class="co">## Chain 2 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
 <span><span class="co">## Chain 2 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 2 finished in 132.4 seconds.</span></span>
+<span><span class="co">## Chain 2 finished in 133.8 seconds.</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## All 4 chains finished successfully.</span></span>
-<span><span class="co">## Mean chain execution time: 101.9 seconds.</span></span>
-<span><span class="co">## Total execution time: 132.5 seconds.</span></span></code></pre>
+<span><span class="co">## Mean chain execution time: 103.2 seconds.</span></span>
+<span><span class="co">## Total execution time: 133.9 seconds.</span></span></code></pre>
 <p>Once it’s done running, Lilace saves the scores for each variant to
 <code>output/lilace_output/variant_scores.tsv</code>. The scores
 dataframe is also saved in <code>lilace_obj$scores</code>. The scores
@@ -409,8 +409,8 @@ score against)</p>
 <span><span class="co">## Chain 4 Iteration:  250 / 2000 [ 12%]  (Warmup) </span></span>
 <span><span class="co">## Chain 3 Iteration:  250 / 2000 [ 12%]  (Warmup) </span></span>
 <span><span class="co">## Chain 1 Iteration:  250 / 2000 [ 12%]  (Warmup) </span></span>
-<span><span class="co">## Chain 4 Iteration:  500 / 2000 [ 25%]  (Warmup) </span></span>
 <span><span class="co">## Chain 2 Iteration:  500 / 2000 [ 25%]  (Warmup) </span></span>
+<span><span class="co">## Chain 4 Iteration:  500 / 2000 [ 25%]  (Warmup) </span></span>
 <span><span class="co">## Chain 3 Iteration:  500 / 2000 [ 25%]  (Warmup) </span></span>
 <span><span class="co">## Chain 1 Iteration:  500 / 2000 [ 25%]  (Warmup) </span></span>
 <span><span class="co">## Chain 4 Iteration:  750 / 2000 [ 37%]  (Warmup) </span></span>
@@ -436,19 +436,19 @@ score against)</p>
 <span><span class="co">## Chain 2 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
 <span><span class="co">## Chain 1 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
 <span><span class="co">## Chain 4 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 4 finished in 89.1 seconds.</span></span>
+<span><span class="co">## Chain 4 finished in 88.5 seconds.</span></span>
 <span><span class="co">## Chain 2 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 2 finished in 89.8 seconds.</span></span>
+<span><span class="co">## Chain 2 finished in 88.9 seconds.</span></span>
 <span><span class="co">## Chain 1 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 1 finished in 92.2 seconds.</span></span>
+<span><span class="co">## Chain 1 finished in 91.5 seconds.</span></span>
 <span><span class="co">## Chain 3 Iteration: 1500 / 2000 [ 75%]  (Sampling) </span></span>
 <span><span class="co">## Chain 3 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
 <span><span class="co">## Chain 3 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 3 finished in 131.4 seconds.</span></span>
+<span><span class="co">## Chain 3 finished in 130.5 seconds.</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## All 4 chains finished successfully.</span></span>
-<span><span class="co">## Mean chain execution time: 100.6 seconds.</span></span>
-<span><span class="co">## Total execution time: 131.5 seconds.</span></span></code></pre>
+<span><span class="co">## Mean chain execution time: 99.9 seconds.</span></span>
+<span><span class="co">## Total execution time: 130.6 seconds.</span></span></code></pre>
 <div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># read scores file</span></span>
 <span><span class="va">scores</span> <span class="op">&lt;-</span> <span class="fu">read_tsv</span><span class="op">(</span><span class="st">"output_no_nc_correction/lilace_output/variant_scores.tsv"</span>, show_col_types <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
@@ -526,17 +526,17 @@ effects at a position as a line of evidence).</p>
 <span><span class="co">## Chain 2 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
 <span><span class="co">## Chain 1 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
 <span><span class="co">## Chain 3 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 3 finished in 91.9 seconds.</span></span>
+<span><span class="co">## Chain 3 finished in 90.6 seconds.</span></span>
 <span><span class="co">## Chain 4 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 4 finished in 93.0 seconds.</span></span>
+<span><span class="co">## Chain 4 finished in 91.7 seconds.</span></span>
 <span><span class="co">## Chain 2 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 2 finished in 93.5 seconds.</span></span>
+<span><span class="co">## Chain 2 finished in 92.0 seconds.</span></span>
 <span><span class="co">## Chain 1 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 1 finished in 94.2 seconds.</span></span>
+<span><span class="co">## Chain 1 finished in 92.7 seconds.</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## All 4 chains finished successfully.</span></span>
-<span><span class="co">## Mean chain execution time: 93.2 seconds.</span></span>
-<span><span class="co">## Total execution time: 94.3 seconds.</span></span></code></pre>
+<span><span class="co">## Mean chain execution time: 91.8 seconds.</span></span>
+<span><span class="co">## Total execution time: 92.8 seconds.</span></span></code></pre>
 <div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># read scores file</span></span>
 <span><span class="va">scores</span> <span class="op">&lt;-</span> <span class="fu">read_tsv</span><span class="op">(</span><span class="st">"output_nopos/lilace_output/variant_scores.tsv"</span>, show_col_types <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
