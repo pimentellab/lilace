@@ -19,7 +19,6 @@ If not replicate specific, input as vector.}
 lilace object with $normalized_data element
 }
 \description{
-#' @description
 Scales the read counts in a bin to match the sort proportions given.
 }
 \examples{

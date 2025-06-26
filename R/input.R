@@ -147,7 +147,7 @@ lilace_from_files <- function(file_list, variant_id_col="hgvs", position_col="po
 
 #' Normalize data to cell sorting proportions
 #'
-#' #' @description
+#' @description
 #' Scales the read counts in a bin to match the sort proportions given.
 #'
 #' @param lilace_obj a lilace obj, such as created using lilace_from_counts()
