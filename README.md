@@ -16,6 +16,8 @@ negative control group.
 
 ## Installation
 
+### R package installation
+
 Lilace relies on [cmdstanr](https://mc-stan.org/cmdstanr/), which should
 be properly installed first.
 
@@ -41,6 +43,31 @@ if (!requireNamespace("remotes", quietly = TRUE)) {
 remotes::install_github("pimentellab/lilace")
 library(lilace)
 ```
+
+### Docker installation
+
+If you prefer to use docker or run into issues with the regular
+installation, a docker image is available
+
+    docker pull jfreudenberg/lilace
+
+To connect the container to an interactive command line environment run
+
+    docker container run -it lilace bash
+
+To instead launch Rstudio in the container, you can specify a port and
+run
+
+    docker run -p 8888:8787 -e PASSWORD=<password> lilace
+
+Then go to <http://localhost:8888/> and use username “rstudio” and your
+input password to login. From there, you can call `library(lilace)` and
+check that you can run the intro vignette code.
+
+If you would like to build the container yourself or make adjustments,
+the Dockerfile is available and can be built with
+
+    docker buildx build --platform linux/amd64,linux/arm64 --build-arg WHEN=2025-06-27 -t lilace .
 
 ## How to use Lilace
 

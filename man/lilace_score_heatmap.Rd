@@ -26,7 +26,7 @@ lilace_score_heatmap(
   wd = 8.5,
   name = "Heatmap",
   savepdf = TRUE,
-  savesvg = TRUE,
+  savesvg = FALSE,
   show = FALSE,
   factor_score = FALSE,
   discovery_score = FALSE,
