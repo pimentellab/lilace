@@ -245,7 +245,7 @@ lilace_score_density <- function(data,
                          wd = 8,
                          name = "DensityPlot",
                          savepdf = TRUE,
-                         savesvg = TRUE,
+                         savesvg = FALSE,
                          show = TRUE
 ){
 
