@@ -1,0 +1,11 @@
+bibentry(
+  bibtype  = "Article",
+  title    = "Accurate variant effect estimation in FACS-based deep mutational scanning data with Lilace",
+  author   = "Jerome Freudenberg, Jingyou Rao, Matthew K Howard, Christian Macdonald, Noah F Greenwald, Willow Coyote-Maestas, Harold Pimentel",
+  journal  = "bioRxiv",
+  year     = "2025",
+  volume   = "",
+  number   = "",
+  pages    = "",
+  doi      = "https://doi.org/10.1101/2025.06.24.661380"
+)
