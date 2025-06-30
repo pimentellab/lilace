@@ -1,5 +1,5 @@
 functions {
-  real dirichlet_multinomial_lpmf(array[,] int y_arr, matrix alpha) {
+  real my_dirichlet_multinomial_lpmf(array[,] int y_arr, matrix alpha) {
     int N = dims(y_arr)[1];
     int K = dims(y_arr)[2];
     matrix[N, K] y = to_matrix(y_arr);
@@ -62,7 +62,7 @@ model {
   for (r in 1:R) {
     q_copy[r] = to_row_vector(q[r]);
   }
-  y_syn ~ dirichlet_multinomial(phi_syn_mat .* to_matrix(q_copy[sMAPr]));
+  y_syn ~ my_dirichlet_multinomial(phi_syn_mat .* to_matrix(q_copy[sMAPr]));
   array[R] row_vector[K - 1] t0; // latent cutoff
   for (r in 1:R) {
     t0[r] = to_row_vector(inv_Phi(head(cumulative_sum(q[r]), K - 1)));
@@ -79,5 +79,5 @@ model {
   p0[,K] = 1 - t2cdf[,K - 1];
 
   // sample
-  y ~ dirichlet_multinomial(phi_mat .* p0);
+  y ~ my_dirichlet_multinomial(phi_mat .* p0);
 }
