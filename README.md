@@ -32,7 +32,8 @@ install_cmdstan(cores = 2)
 The compiler requirements can be seen at
 [stan-dev](https://github.com/stan-dev/stan/wiki/Coding-Style-and-Idioms#supported-cpp-versions-and-compilers).
 If you run into issues with installation, please ensure your gcc version
-is \> 5.
+is \> 5. Additionally, if you run into issues with the TBB library, try
+downgrading CmdStan to version 2.33.1.
 
 Then, install Lilace from GitHub.
 
