@@ -35,3 +35,6 @@ RUN R -e "library(cmdstanr); print(cmdstan_version())"
 
 # install Lilace
 RUN R -e "remotes::install_github('pimentellab/lilace')"
+
+# ldconfig for singularity
+RUN ldconfig
