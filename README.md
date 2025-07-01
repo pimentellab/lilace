@@ -68,7 +68,7 @@ check that you can run the intro vignette code.
 If you would like to build the container yourself or make adjustments,
 the Dockerfile is available and can be built with
 
-    docker buildx build --platform linux/amd64,linux/arm64 --build-arg WHEN=2025-06-27 -t lilace .
+    docker buildx build --platform linux/amd64,linux/arm64 -t lilace .
 
 ## How to use Lilace
 

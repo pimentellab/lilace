@@ -7,9 +7,6 @@ RUN apt-get update && apt-get install -y git cmake g++ && apt-get clean
 RUN mkdir -p /opt/cmdstan
 
 # install R packages
-ARG WHEN
-RUN R -e "options(repos = \
-  list(CRAN = 'http://mran.revolutionanalytics.com/snapshot/${WHEN}'))"
 # RUN R -e "install.packages('tidyverse', dependencies = TRUE);     if (!library(tidyverse, logical.return=T)) quit(status=10)" \
 RUN R -e "install.packages('cowplot', dependencies = TRUE);   if (!library(cowplot, logical.return=T)) quit(status=10)" \
 && R -e "install.packages('ggpubr', dependencies = TRUE); if (!library(ggpubr, logical.return=T)) quit(status=10)" \
