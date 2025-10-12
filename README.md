@@ -4,8 +4,11 @@
 # Lilace
 
 <!-- badges: start -->
+
 <!-- badges: end -->
+
 <p align="left">
+
 <img src="man/figures/lilace-logo.png" width="150">
 </p>
 
@@ -33,7 +36,10 @@ The compiler requirements can be seen at
 [stan-dev](https://github.com/stan-dev/stan/wiki/Coding-Style-and-Idioms#supported-cpp-versions-and-compilers).
 If you run into issues with installation, please ensure your gcc version
 is \> 5. Additionally, if you run into issues with the TBB library, try
-downgrading CmdStan to version 2.33.1.
+downgrading CmdStan to version 2.33.1. If it is not possible to install
+CmdStan, our variational implementation of Lilace is developed in Python
+and is available in a [separate
+repo](https://github.com/jermoef/lilace-VI).
 
 Then, install Lilace from GitHub.
 
@@ -73,6 +79,7 @@ the Dockerfile is available and can be built with
 ## How to use Lilace
 
 An introductory vignette can be found
-[here](https://pimentellab.com/lilace/articles/intro.html). If you run
-into any problems, please submit an issue on github or email
+[here](https://pimentellab.com/lilace/articles/intro.html). Variational
+Lilace can be found [here](https://github.com/jermoef/lilace-VI). If you
+run into any problems, please submit an issue on github or email
 <jfreudenberg@ucla.edu>.
