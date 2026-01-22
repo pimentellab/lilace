@@ -59,7 +59,7 @@
                         <h4 data-toc-skip class="author">Jerome
 Freudenberg</h4>
             
-            <h4 data-toc-skip class="date">October 12 2025</h4>
+            <h4 data-toc-skip class="date">January 22 2026</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/jermoef/lilace/blob/HEAD/vignettes/intro.Rmd" class="external-link"><code>vignettes/intro.Rmd</code></a></small>
       <div class="d-none name"><code>intro.Rmd</code></div>
@@ -263,7 +263,7 @@ outputs for both of these options towards the end of the vignette.</p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">lilace_obj</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/lilace_fit_model.html">lilace_fit_model</a></span><span class="op">(</span><span class="va">lilace_obj</span>, <span class="va">output_dir</span>, control_label<span class="op">=</span><span class="st">"synonymous"</span>, </span>
 <span>                               control_correction<span class="op">=</span><span class="cn">T</span>, use_positions<span class="op">=</span><span class="cn">T</span>, pseudocount<span class="op">=</span><span class="cn">T</span>,</span>
-<span>                               n_parallel_chains<span class="op">=</span><span class="fl">4</span><span class="op">)</span></span></code></pre></div>
+<span>                               n_parallel_chains<span class="op">=</span><span class="fl">4</span>, seed<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## Running MCMC with 4 parallel chains...</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## Chain 1 Iteration:    1 / 2000 [  0%]  (Warmup) </span></span>
@@ -271,49 +271,49 @@ outputs for both of these options towards the end of the vignette.</p>
 <span><span class="co">## Chain 3 Iteration:    1 / 2000 [  0%]  (Warmup) </span></span>
 <span><span class="co">## Chain 4 Iteration:    1 / 2000 [  0%]  (Warmup) </span></span>
 <span><span class="co">## Chain 3 Iteration:  250 / 2000 [ 12%]  (Warmup) </span></span>
-<span><span class="co">## Chain 4 Iteration:  250 / 2000 [ 12%]  (Warmup) </span></span>
 <span><span class="co">## Chain 2 Iteration:  250 / 2000 [ 12%]  (Warmup) </span></span>
 <span><span class="co">## Chain 1 Iteration:  250 / 2000 [ 12%]  (Warmup) </span></span>
+<span><span class="co">## Chain 4 Iteration:  250 / 2000 [ 12%]  (Warmup) </span></span>
 <span><span class="co">## Chain 3 Iteration:  500 / 2000 [ 25%]  (Warmup) </span></span>
-<span><span class="co">## Chain 4 Iteration:  500 / 2000 [ 25%]  (Warmup) </span></span>
 <span><span class="co">## Chain 2 Iteration:  500 / 2000 [ 25%]  (Warmup) </span></span>
+<span><span class="co">## Chain 4 Iteration:  500 / 2000 [ 25%]  (Warmup) </span></span>
 <span><span class="co">## Chain 1 Iteration:  500 / 2000 [ 25%]  (Warmup) </span></span>
-<span><span class="co">## Chain 4 Iteration:  750 / 2000 [ 37%]  (Warmup) </span></span>
-<span><span class="co">## Chain 2 Iteration:  750 / 2000 [ 37%]  (Warmup) </span></span>
 <span><span class="co">## Chain 3 Iteration:  750 / 2000 [ 37%]  (Warmup) </span></span>
+<span><span class="co">## Chain 2 Iteration:  750 / 2000 [ 37%]  (Warmup) </span></span>
 <span><span class="co">## Chain 1 Iteration:  750 / 2000 [ 37%]  (Warmup) </span></span>
-<span><span class="co">## Chain 4 Iteration: 1000 / 2000 [ 50%]  (Warmup) </span></span>
-<span><span class="co">## Chain 4 Iteration: 1001 / 2000 [ 50%]  (Sampling) </span></span>
+<span><span class="co">## Chain 4 Iteration:  750 / 2000 [ 37%]  (Warmup) </span></span>
 <span><span class="co">## Chain 3 Iteration: 1000 / 2000 [ 50%]  (Warmup) </span></span>
 <span><span class="co">## Chain 3 Iteration: 1001 / 2000 [ 50%]  (Sampling) </span></span>
 <span><span class="co">## Chain 2 Iteration: 1000 / 2000 [ 50%]  (Warmup) </span></span>
 <span><span class="co">## Chain 2 Iteration: 1001 / 2000 [ 50%]  (Sampling) </span></span>
 <span><span class="co">## Chain 1 Iteration: 1000 / 2000 [ 50%]  (Warmup) </span></span>
 <span><span class="co">## Chain 1 Iteration: 1001 / 2000 [ 50%]  (Sampling) </span></span>
-<span><span class="co">## Chain 4 Iteration: 1250 / 2000 [ 62%]  (Sampling) </span></span>
+<span><span class="co">## Chain 4 Iteration: 1000 / 2000 [ 50%]  (Warmup) </span></span>
+<span><span class="co">## Chain 4 Iteration: 1001 / 2000 [ 50%]  (Sampling) </span></span>
 <span><span class="co">## Chain 3 Iteration: 1250 / 2000 [ 62%]  (Sampling) </span></span>
 <span><span class="co">## Chain 2 Iteration: 1250 / 2000 [ 62%]  (Sampling) </span></span>
-<span><span class="co">## Chain 1 Iteration: 1250 / 2000 [ 62%]  (Sampling) </span></span>
-<span><span class="co">## Chain 4 Iteration: 1500 / 2000 [ 75%]  (Sampling) </span></span>
 <span><span class="co">## Chain 3 Iteration: 1500 / 2000 [ 75%]  (Sampling) </span></span>
+<span><span class="co">## Chain 1 Iteration: 1250 / 2000 [ 62%]  (Sampling) </span></span>
 <span><span class="co">## Chain 2 Iteration: 1500 / 2000 [ 75%]  (Sampling) </span></span>
-<span><span class="co">## Chain 1 Iteration: 1500 / 2000 [ 75%]  (Sampling) </span></span>
-<span><span class="co">## Chain 4 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
 <span><span class="co">## Chain 3 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
+<span><span class="co">## Chain 4 Iteration: 1250 / 2000 [ 62%]  (Sampling) </span></span>
 <span><span class="co">## Chain 2 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
-<span><span class="co">## Chain 1 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
-<span><span class="co">## Chain 4 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 4 finished in 90.1 seconds.</span></span>
 <span><span class="co">## Chain 3 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 3 finished in 91.8 seconds.</span></span>
+<span><span class="co">## Chain 3 finished in 89.9 seconds.</span></span>
+<span><span class="co">## Chain 1 Iteration: 1500 / 2000 [ 75%]  (Sampling) </span></span>
 <span><span class="co">## Chain 2 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 2 finished in 92.4 seconds.</span></span>
+<span><span class="co">## Chain 2 finished in 93.1 seconds.</span></span>
+<span><span class="co">## Chain 4 Iteration: 1500 / 2000 [ 75%]  (Sampling) </span></span>
+<span><span class="co">## Chain 1 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
 <span><span class="co">## Chain 1 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 1 finished in 92.5 seconds.</span></span>
+<span><span class="co">## Chain 1 finished in 124.1 seconds.</span></span>
+<span><span class="co">## Chain 4 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
+<span><span class="co">## Chain 4 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
+<span><span class="co">## Chain 4 finished in 150.6 seconds.</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## All 4 chains finished successfully.</span></span>
-<span><span class="co">## Mean chain execution time: 91.7 seconds.</span></span>
-<span><span class="co">## Total execution time: 92.5 seconds.</span></span></code></pre>
+<span><span class="co">## Mean chain execution time: 114.4 seconds.</span></span>
+<span><span class="co">## Total execution time: 150.7 seconds.</span></span></code></pre>
 <p>Once it’s done running, Lilace saves the scores for each variant to
 <code>output/lilace_output/variant_scores.tsv</code>. The scores
 dataframe is also saved in <code>lilace_obj$scores</code>. The scores
@@ -323,14 +323,14 @@ are also combined with the input dataframe at
 <code class="sourceCode R"><span><span class="va">scores</span> <span class="op">&lt;-</span> <span class="fu">read_tsv</span><span class="op">(</span><span class="st">"output/lilace_output/variant_scores.tsv"</span>, show_col_types <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">scores</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 6 × 12</span></span></span>
-<span><span class="co">##   variant        type  wildtype mutation exp   position  effect effect_se   lfsr</span></span>
-<span><span class="co">##   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">1</span> p.(G2del)      dele… G        del0     ph55         2 -<span style="color: #BB0000;">0.074</span><span style="color: #BB0000; text-decoration: underline;">0</span>     0.284 0.364 </span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">2</span> p.(G2_N3del)   dele… G        del1     ph55         2  0.349      0.282 0.099<span style="text-decoration: underline;">8</span></span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">3</span> p.(G2_I4del)   dele… G        del2     ph55         2  0.220      0.280 0.210 </span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">4</span> p.(G2_N3insG)  inse… G        ins0     ph55         2  0.272      0.276 0.154 </span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">5</span> p.(G2_N3insGS) inse… G        ins1     ph55         2  0.100      0.273 0.363 </span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">6</span> p.(G2A)        miss… G        A        ph55         2  0.110      0.281 0.353 </span></span>
+<span><span class="co">##   variant        type   wildtype mutation exp   position  effect effect_se  lfsr</span></span>
+<span><span class="co">##   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">1</span> p.(G2del)      delet… G        del0     ph55         2 -<span style="color: #BB0000;">0.067</span><span style="color: #BB0000; text-decoration: underline;">7</span>     0.281 0.384</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">2</span> p.(G2_N3del)   delet… G        del1     ph55         2  0.348      0.284 0.096</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">3</span> p.(G2_I4del)   delet… G        del2     ph55         2  0.229      0.287 0.209</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">4</span> p.(G2_N3insG)  inser… G        ins0     ph55         2  0.269      0.280 0.156</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">5</span> p.(G2_N3insGS) inser… G        ins1     ph55         2  0.097<span style="text-decoration: underline;">8</span>     0.272 0.361</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">6</span> p.(G2A)        misse… G        A        ph55         2  0.107      0.283 0.368</span></span>
 <span><span class="co">## <span style="color: #949494;"># ℹ 3 more variables: pos_mean &lt;dbl&gt;, pos_sd &lt;dbl&gt;, discovery05 &lt;dbl&gt;</span></span></span></code></pre>
 <p>The <code>effect</code> column represents the estimated effect size /
 score for a variant, while <code>effect_se</code> gives the standard
@@ -398,57 +398,57 @@ score against)</p>
 <span><span class="va">output_dir</span> <span class="op">&lt;-</span> <span class="st">"output_no_nc_correction"</span></span>
 <span><span class="co"># run the model on data</span></span>
 <span><span class="va">fitted_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/lilace_fit_model.html">lilace_fit_model</a></span><span class="op">(</span><span class="va">lilace_obj</span>, <span class="va">output_dir</span>, control_label<span class="op">=</span><span class="st">"synonymous"</span>, </span>
-<span>                                control_correction<span class="op">=</span><span class="cn">F</span><span class="op">)</span></span></code></pre></div>
+<span>                                control_correction<span class="op">=</span><span class="cn">F</span>, seed<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## Running MCMC with 4 parallel chains...</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## Chain 1 Iteration:    1 / 2000 [  0%]  (Warmup) </span></span>
 <span><span class="co">## Chain 2 Iteration:    1 / 2000 [  0%]  (Warmup) </span></span>
 <span><span class="co">## Chain 3 Iteration:    1 / 2000 [  0%]  (Warmup) </span></span>
 <span><span class="co">## Chain 4 Iteration:    1 / 2000 [  0%]  (Warmup) </span></span>
-<span><span class="co">## Chain 4 Iteration:  250 / 2000 [ 12%]  (Warmup) </span></span>
+<span><span class="co">## Chain 3 Iteration:  250 / 2000 [ 12%]  (Warmup) </span></span>
 <span><span class="co">## Chain 2 Iteration:  250 / 2000 [ 12%]  (Warmup) </span></span>
 <span><span class="co">## Chain 1 Iteration:  250 / 2000 [ 12%]  (Warmup) </span></span>
-<span><span class="co">## Chain 3 Iteration:  250 / 2000 [ 12%]  (Warmup) </span></span>
-<span><span class="co">## Chain 4 Iteration:  500 / 2000 [ 25%]  (Warmup) </span></span>
+<span><span class="co">## Chain 4 Iteration:  250 / 2000 [ 12%]  (Warmup) </span></span>
+<span><span class="co">## Chain 3 Iteration:  500 / 2000 [ 25%]  (Warmup) </span></span>
 <span><span class="co">## Chain 2 Iteration:  500 / 2000 [ 25%]  (Warmup) </span></span>
 <span><span class="co">## Chain 1 Iteration:  500 / 2000 [ 25%]  (Warmup) </span></span>
-<span><span class="co">## Chain 3 Iteration:  500 / 2000 [ 25%]  (Warmup) </span></span>
-<span><span class="co">## Chain 4 Iteration:  750 / 2000 [ 37%]  (Warmup) </span></span>
+<span><span class="co">## Chain 4 Iteration:  500 / 2000 [ 25%]  (Warmup) </span></span>
+<span><span class="co">## Chain 3 Iteration:  750 / 2000 [ 37%]  (Warmup) </span></span>
 <span><span class="co">## Chain 2 Iteration:  750 / 2000 [ 37%]  (Warmup) </span></span>
 <span><span class="co">## Chain 1 Iteration:  750 / 2000 [ 37%]  (Warmup) </span></span>
-<span><span class="co">## Chain 3 Iteration:  750 / 2000 [ 37%]  (Warmup) </span></span>
-<span><span class="co">## Chain 4 Iteration: 1000 / 2000 [ 50%]  (Warmup) </span></span>
-<span><span class="co">## Chain 4 Iteration: 1001 / 2000 [ 50%]  (Sampling) </span></span>
+<span><span class="co">## Chain 4 Iteration:  750 / 2000 [ 37%]  (Warmup) </span></span>
+<span><span class="co">## Chain 3 Iteration: 1000 / 2000 [ 50%]  (Warmup) </span></span>
+<span><span class="co">## Chain 3 Iteration: 1001 / 2000 [ 50%]  (Sampling) </span></span>
 <span><span class="co">## Chain 2 Iteration: 1000 / 2000 [ 50%]  (Warmup) </span></span>
 <span><span class="co">## Chain 2 Iteration: 1001 / 2000 [ 50%]  (Sampling) </span></span>
 <span><span class="co">## Chain 1 Iteration: 1000 / 2000 [ 50%]  (Warmup) </span></span>
 <span><span class="co">## Chain 1 Iteration: 1001 / 2000 [ 50%]  (Sampling) </span></span>
-<span><span class="co">## Chain 3 Iteration: 1000 / 2000 [ 50%]  (Warmup) </span></span>
-<span><span class="co">## Chain 3 Iteration: 1001 / 2000 [ 50%]  (Sampling) </span></span>
-<span><span class="co">## Chain 4 Iteration: 1250 / 2000 [ 62%]  (Sampling) </span></span>
-<span><span class="co">## Chain 1 Iteration: 1250 / 2000 [ 62%]  (Sampling) </span></span>
-<span><span class="co">## Chain 2 Iteration: 1250 / 2000 [ 62%]  (Sampling) </span></span>
+<span><span class="co">## Chain 4 Iteration: 1000 / 2000 [ 50%]  (Warmup) </span></span>
+<span><span class="co">## Chain 4 Iteration: 1001 / 2000 [ 50%]  (Sampling) </span></span>
 <span><span class="co">## Chain 3 Iteration: 1250 / 2000 [ 62%]  (Sampling) </span></span>
-<span><span class="co">## Chain 4 Iteration: 1500 / 2000 [ 75%]  (Sampling) </span></span>
-<span><span class="co">## Chain 1 Iteration: 1500 / 2000 [ 75%]  (Sampling) </span></span>
+<span><span class="co">## Chain 2 Iteration: 1250 / 2000 [ 62%]  (Sampling) </span></span>
 <span><span class="co">## Chain 3 Iteration: 1500 / 2000 [ 75%]  (Sampling) </span></span>
-<span><span class="co">## Chain 4 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
-<span><span class="co">## Chain 1 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
+<span><span class="co">## Chain 1 Iteration: 1250 / 2000 [ 62%]  (Sampling) </span></span>
 <span><span class="co">## Chain 2 Iteration: 1500 / 2000 [ 75%]  (Sampling) </span></span>
 <span><span class="co">## Chain 3 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
-<span><span class="co">## Chain 4 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 4 finished in 92.6 seconds.</span></span>
-<span><span class="co">## Chain 1 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 1 finished in 93.6 seconds.</span></span>
-<span><span class="co">## Chain 3 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 3 finished in 98.9 seconds.</span></span>
+<span><span class="co">## Chain 4 Iteration: 1250 / 2000 [ 62%]  (Sampling) </span></span>
 <span><span class="co">## Chain 2 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
+<span><span class="co">## Chain 3 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
+<span><span class="co">## Chain 3 finished in 93.0 seconds.</span></span>
+<span><span class="co">## Chain 1 Iteration: 1500 / 2000 [ 75%]  (Sampling) </span></span>
 <span><span class="co">## Chain 2 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 2 finished in 119.0 seconds.</span></span>
+<span><span class="co">## Chain 2 finished in 96.2 seconds.</span></span>
+<span><span class="co">## Chain 4 Iteration: 1500 / 2000 [ 75%]  (Sampling) </span></span>
+<span><span class="co">## Chain 1 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
+<span><span class="co">## Chain 1 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
+<span><span class="co">## Chain 1 finished in 128.0 seconds.</span></span>
+<span><span class="co">## Chain 4 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
+<span><span class="co">## Chain 4 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
+<span><span class="co">## Chain 4 finished in 155.1 seconds.</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## All 4 chains finished successfully.</span></span>
-<span><span class="co">## Mean chain execution time: 101.0 seconds.</span></span>
-<span><span class="co">## Total execution time: 119.1 seconds.</span></span></code></pre>
+<span><span class="co">## Mean chain execution time: 118.1 seconds.</span></span>
+<span><span class="co">## Total execution time: 155.3 seconds.</span></span></code></pre>
 <div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># read scores file</span></span>
 <span><span class="va">scores</span> <span class="op">&lt;-</span> <span class="fu">read_tsv</span><span class="op">(</span><span class="st">"output_no_nc_correction/lilace_output/variant_scores.tsv"</span>, show_col_types <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
@@ -456,12 +456,12 @@ score against)</p>
 <pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 6 × 12</span></span></span>
 <span><span class="co">##   variant       type  wildtype mutation exp   position  effect effect_se    lfsr</span></span>
 <span><span class="co">##   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">1</span> p.(G2del)     dele… G        del0     ph55         2 -<span style="color: #BB0000;">0.060</span><span style="color: #BB0000; text-decoration: underline;">5</span>     0.121 0.314  </span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">2</span> p.(G2_N3del)  dele… G        del1     ph55         2  0.362      0.128 0.001<span style="text-decoration: underline;">75</span></span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">3</span> p.(G2_I4del)  dele… G        del2     ph55         2  0.233      0.112 0.016<span style="text-decoration: underline;">2</span> </span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">4</span> p.(G2_N3insG) inse… G        ins0     ph55         2  0.284      0.114 0.005  </span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">5</span> p.(G2_N3insG… inse… G        ins1     ph55         2  0.109      0.105 0.147  </span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">6</span> p.(G2A)       miss… G        A        ph55         2  0.113      0.117 0.168  </span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">1</span> p.(G2del)     dele… G        del0     ph55         2 -<span style="color: #BB0000;">0.064</span><span style="color: #BB0000; text-decoration: underline;">2</span>     0.125 0.313  </span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">2</span> p.(G2_N3del)  dele… G        del1     ph55         2  0.357      0.125 0.002<span style="text-decoration: underline;">25</span></span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">3</span> p.(G2_I4del)  dele… G        del2     ph55         2  0.228      0.110 0.02   </span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">4</span> p.(G2_N3insG) inse… G        ins0     ph55         2  0.279      0.114 0.005  </span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">5</span> p.(G2_N3insG… inse… G        ins1     ph55         2  0.105      0.105 0.158  </span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">6</span> p.(G2A)       miss… G        A        ph55         2  0.111      0.121 0.188  </span></span>
 <span><span class="co">## <span style="color: #949494;"># ℹ 3 more variables: pos_mean &lt;dbl&gt;, pos_sd &lt;dbl&gt;, discovery05 &lt;dbl&gt;</span></span></span></code></pre>
 <div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/lilace_score_heatmap.html">lilace_score_heatmap</a></span><span class="op">(</span><span class="va">scores</span>, <span class="va">output_dir</span>, score.col<span class="op">=</span><span class="st">"effect"</span>, name<span class="op">=</span><span class="st">"score_heatmap"</span>, </span>
@@ -486,7 +486,7 @@ effects at a position as a line of evidence).</p>
 <span><span class="va">output_dir</span> <span class="op">&lt;-</span> <span class="st">"output_nopos"</span></span>
 <span><span class="co"># run the model on data</span></span>
 <span><span class="va">fitted_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/lilace_fit_model.html">lilace_fit_model</a></span><span class="op">(</span><span class="va">lilace_obj</span>, <span class="va">output_dir</span>, control_label<span class="op">=</span><span class="st">"synonymous"</span>, </span>
-<span>                                use_positions<span class="op">=</span><span class="cn">F</span><span class="op">)</span></span></code></pre></div>
+<span>                                use_positions<span class="op">=</span><span class="cn">F</span>, seed<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## Running MCMC with 4 parallel chains...</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## Chain 1 Iteration:    1 / 2000 [  0%]  (Warmup) </span></span>
@@ -494,62 +494,62 @@ effects at a position as a line of evidence).</p>
 <span><span class="co">## Chain 3 Iteration:    1 / 2000 [  0%]  (Warmup) </span></span>
 <span><span class="co">## Chain 4 Iteration:    1 / 2000 [  0%]  (Warmup) </span></span>
 <span><span class="co">## Chain 4 Iteration:  250 / 2000 [ 12%]  (Warmup) </span></span>
-<span><span class="co">## Chain 2 Iteration:  250 / 2000 [ 12%]  (Warmup) </span></span>
 <span><span class="co">## Chain 1 Iteration:  250 / 2000 [ 12%]  (Warmup) </span></span>
 <span><span class="co">## Chain 3 Iteration:  250 / 2000 [ 12%]  (Warmup) </span></span>
+<span><span class="co">## Chain 2 Iteration:  250 / 2000 [ 12%]  (Warmup) </span></span>
 <span><span class="co">## Chain 4 Iteration:  500 / 2000 [ 25%]  (Warmup) </span></span>
-<span><span class="co">## Chain 1 Iteration:  500 / 2000 [ 25%]  (Warmup) </span></span>
-<span><span class="co">## Chain 2 Iteration:  500 / 2000 [ 25%]  (Warmup) </span></span>
 <span><span class="co">## Chain 3 Iteration:  500 / 2000 [ 25%]  (Warmup) </span></span>
+<span><span class="co">## Chain 2 Iteration:  500 / 2000 [ 25%]  (Warmup) </span></span>
+<span><span class="co">## Chain 1 Iteration:  500 / 2000 [ 25%]  (Warmup) </span></span>
 <span><span class="co">## Chain 4 Iteration:  750 / 2000 [ 37%]  (Warmup) </span></span>
-<span><span class="co">## Chain 1 Iteration:  750 / 2000 [ 37%]  (Warmup) </span></span>
-<span><span class="co">## Chain 2 Iteration:  750 / 2000 [ 37%]  (Warmup) </span></span>
 <span><span class="co">## Chain 3 Iteration:  750 / 2000 [ 37%]  (Warmup) </span></span>
+<span><span class="co">## Chain 2 Iteration:  750 / 2000 [ 37%]  (Warmup) </span></span>
+<span><span class="co">## Chain 1 Iteration:  750 / 2000 [ 37%]  (Warmup) </span></span>
 <span><span class="co">## Chain 4 Iteration: 1000 / 2000 [ 50%]  (Warmup) </span></span>
 <span><span class="co">## Chain 4 Iteration: 1001 / 2000 [ 50%]  (Sampling) </span></span>
-<span><span class="co">## Chain 1 Iteration: 1000 / 2000 [ 50%]  (Warmup) </span></span>
-<span><span class="co">## Chain 1 Iteration: 1001 / 2000 [ 50%]  (Sampling) </span></span>
-<span><span class="co">## Chain 2 Iteration: 1000 / 2000 [ 50%]  (Warmup) </span></span>
-<span><span class="co">## Chain 2 Iteration: 1001 / 2000 [ 50%]  (Sampling) </span></span>
 <span><span class="co">## Chain 3 Iteration: 1000 / 2000 [ 50%]  (Warmup) </span></span>
 <span><span class="co">## Chain 3 Iteration: 1001 / 2000 [ 50%]  (Sampling) </span></span>
+<span><span class="co">## Chain 2 Iteration: 1000 / 2000 [ 50%]  (Warmup) </span></span>
+<span><span class="co">## Chain 2 Iteration: 1001 / 2000 [ 50%]  (Sampling) </span></span>
+<span><span class="co">## Chain 1 Iteration: 1000 / 2000 [ 50%]  (Warmup) </span></span>
+<span><span class="co">## Chain 1 Iteration: 1001 / 2000 [ 50%]  (Sampling) </span></span>
 <span><span class="co">## Chain 4 Iteration: 1250 / 2000 [ 62%]  (Sampling) </span></span>
-<span><span class="co">## Chain 1 Iteration: 1250 / 2000 [ 62%]  (Sampling) </span></span>
-<span><span class="co">## Chain 2 Iteration: 1250 / 2000 [ 62%]  (Sampling) </span></span>
 <span><span class="co">## Chain 3 Iteration: 1250 / 2000 [ 62%]  (Sampling) </span></span>
+<span><span class="co">## Chain 2 Iteration: 1250 / 2000 [ 62%]  (Sampling) </span></span>
+<span><span class="co">## Chain 1 Iteration: 1250 / 2000 [ 62%]  (Sampling) </span></span>
 <span><span class="co">## Chain 4 Iteration: 1500 / 2000 [ 75%]  (Sampling) </span></span>
-<span><span class="co">## Chain 1 Iteration: 1500 / 2000 [ 75%]  (Sampling) </span></span>
-<span><span class="co">## Chain 2 Iteration: 1500 / 2000 [ 75%]  (Sampling) </span></span>
 <span><span class="co">## Chain 3 Iteration: 1500 / 2000 [ 75%]  (Sampling) </span></span>
+<span><span class="co">## Chain 2 Iteration: 1500 / 2000 [ 75%]  (Sampling) </span></span>
+<span><span class="co">## Chain 1 Iteration: 1500 / 2000 [ 75%]  (Sampling) </span></span>
 <span><span class="co">## Chain 4 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
-<span><span class="co">## Chain 1 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
-<span><span class="co">## Chain 2 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
 <span><span class="co">## Chain 3 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
+<span><span class="co">## Chain 2 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
+<span><span class="co">## Chain 1 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
 <span><span class="co">## Chain 4 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 4 finished in 92.1 seconds.</span></span>
-<span><span class="co">## Chain 1 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 1 finished in 92.9 seconds.</span></span>
-<span><span class="co">## Chain 2 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 2 finished in 93.3 seconds.</span></span>
+<span><span class="co">## Chain 4 finished in 95.8 seconds.</span></span>
 <span><span class="co">## Chain 3 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 3 finished in 93.8 seconds.</span></span>
+<span><span class="co">## Chain 3 finished in 97.6 seconds.</span></span>
+<span><span class="co">## Chain 2 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
+<span><span class="co">## Chain 2 finished in 97.9 seconds.</span></span>
+<span><span class="co">## Chain 1 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
+<span><span class="co">## Chain 1 finished in 98.2 seconds.</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## All 4 chains finished successfully.</span></span>
-<span><span class="co">## Mean chain execution time: 93.0 seconds.</span></span>
-<span><span class="co">## Total execution time: 93.9 seconds.</span></span></code></pre>
+<span><span class="co">## Mean chain execution time: 97.4 seconds.</span></span>
+<span><span class="co">## Total execution time: 98.3 seconds.</span></span></code></pre>
 <div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># read scores file</span></span>
 <span><span class="va">scores</span> <span class="op">&lt;-</span> <span class="fu">read_tsv</span><span class="op">(</span><span class="st">"output_nopos/lilace_output/variant_scores.tsv"</span>, show_col_types <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">scores</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 6 × 10</span></span></span>
-<span><span class="co">##   variant        type  wildtype mutation exp   position  effect effect_se   lfsr</span></span>
-<span><span class="co">##   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">1</span> p.(G2del)      dele… G        del0     ph55         2 -<span style="color: #BB0000;">0.187</span>      0.291 0.238 </span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">2</span> p.(G2_N3del)   dele… G        del1     ph55         2  0.450      0.298 0.051<span style="text-decoration: underline;">5</span></span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">3</span> p.(G2_I4del)   dele… G        del2     ph55         2  0.249      0.293 0.190 </span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">4</span> p.(G2_N3insG)  inse… G        ins0     ph55         2  0.326      0.289 0.125 </span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">5</span> p.(G2_N3insGS) inse… G        ins1     ph55         2  0.081<span style="text-decoration: underline;">1</span>     0.287 0.397 </span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">6</span> p.(G2A)        miss… G        A        ph55         2  0.073<span style="text-decoration: underline;">0</span>     0.295 0.421 </span></span>
+<span><span class="co">##   variant        type   wildtype mutation exp   position  effect effect_se  lfsr</span></span>
+<span><span class="co">##   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">1</span> p.(G2del)      delet… G        del0     ph55         2 -<span style="color: #BB0000;">0.191</span>      0.291 0.236</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">2</span> p.(G2_N3del)   delet… G        del1     ph55         2  0.448      0.297 0.054</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">3</span> p.(G2_I4del)   delet… G        del2     ph55         2  0.243      0.287 0.192</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">4</span> p.(G2_N3insG)  inser… G        ins0     ph55         2  0.318      0.287 0.129</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">5</span> p.(G2_N3insGS) inser… G        ins1     ph55         2  0.085<span style="text-decoration: underline;">5</span>     0.281 0.396</span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">6</span> p.(G2A)        misse… G        A        ph55         2  0.072<span style="text-decoration: underline;">5</span>     0.292 0.420</span></span>
 <span><span class="co">## <span style="color: #949494;"># ℹ 1 more variable: discovery05 &lt;dbl&gt;</span></span></span></code></pre>
 <div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/lilace_score_heatmap.html">lilace_score_heatmap</a></span><span class="op">(</span><span class="va">scores</span>, <span class="va">output_dir</span>, score.col<span class="op">=</span><span class="st">"effect"</span>, name<span class="op">=</span><span class="st">"score_heatmap"</span>, </span>
@@ -565,21 +565,21 @@ effects at a position as a line of evidence).</p>
 <h2 id="view-posterior-samples">View posterior samples<a class="anchor" aria-label="anchor" href="#view-posterior-samples"></a>
 </h2>
 <p>For convenience and advanced analysis, the posterior samples are
-saved in <code>lilace_output/posterior_samples.RData</code>. They can be
+saved in <code>lilace_output/posterior_samples.rds</code>. They can be
 analyzed further with the <code>posterior</code> package. Here is an
 example of how to access them:</p>
 <div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mc-stan.org/posterior/" class="external-link">posterior</a></span><span class="op">)</span></span>
-<span><span class="va">draws</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html" class="external-link">readRDS</a></span><span class="op">(</span><span class="st">"output/lilace_output/posterior_samples.RData"</span><span class="op">)</span></span>
+<span><span class="va">draws</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html" class="external-link">readRDS</a></span><span class="op">(</span><span class="st">"output/lilace_output/posterior_samples.rds"</span><span class="op">)</span></span>
 <span><span class="va">posterior_samples</span> <span class="op">&lt;-</span> <span class="fu">posterior</span><span class="fu">::</span><span class="fu"><a href="https://mc-stan.org/posterior/reference/draws_rvars.html" class="external-link">as_draws_rvars</a></span><span class="op">(</span><span class="va">draws</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="fu">posterior</span><span class="fu">::</span><span class="fu"><a href="https://mc-stan.org/posterior/reference/draws_of.html" class="external-link">draws_of</a></span><span class="op">(</span><span class="va">posterior_samples</span><span class="op">$</span><span class="va">a</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##        [,1]       [,2]      [,3]</span></span>
-<span><span class="co">## 1 0.0173421 0.00328075 0.0214711</span></span>
-<span><span class="co">## 2 0.0188495 0.00442516 0.0215657</span></span>
-<span><span class="co">## 3 0.0182281 0.00254763 0.0219361</span></span>
-<span><span class="co">## 4 0.0179092 0.00260006 0.0223294</span></span>
-<span><span class="co">## 5 0.0139448 0.00265842 0.0231687</span></span>
-<span><span class="co">## 6 0.0147252 0.00530526 0.0233530</span></span></code></pre>
+<span><span class="co">## 1 0.0186883 0.00572697 0.0245361</span></span>
+<span><span class="co">## 2 0.0157604 0.00556233 0.0201306</span></span>
+<span><span class="co">## 3 0.0214507 0.01091660 0.0230276</span></span>
+<span><span class="co">## 4 0.0171415 0.00890432 0.0241538</span></span>
+<span><span class="co">## 5 0.0203703 0.00793405 0.0195903</span></span>
+<span><span class="co">## 6 0.0131362 0.00361930 0.0232617</span></span></code></pre>
 </div>
 <div class="section level2">
 <h2 id="format-input-data-from-enrich2-output-format">Format input data from Enrich2 output format<a class="anchor" aria-label="anchor" href="#format-input-data-from-enrich2-output-format"></a>
