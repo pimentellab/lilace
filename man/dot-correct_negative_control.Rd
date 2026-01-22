@@ -4,7 +4,7 @@
 \alias{.correct_negative_control}
 \title{compute negative control bias correction (intended for internal use)}
 \usage{
-.correct_negative_control(mu, data, input, control_label)
+.correct_negative_control(mu, data, input, control_label, seed = NULL)
 }
 \arguments{
 \item{mu}{mu posterior samples}
@@ -14,6 +14,8 @@
 \item{input}{stan model input parameters}
 
 \item{control_label}{control label}
+
+\item{seed}{seed for negative control sampling}
 }
 \description{
 compute negative control bias correction (intended for internal use)

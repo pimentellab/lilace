@@ -10,7 +10,8 @@
   input,
   control_correction,
   control_label,
-  use_positions
+  use_positions,
+  nc_seed = NULL
 )
 }
 \arguments{
@@ -25,6 +26,8 @@
 \item{control_label}{label for negative control variant types}
 
 \item{use_positions}{logical for whether positions used in running Lilace}
+
+\item{nc_seed}{negative control correction seed}
 }
 \description{
 summarize posterior samples (intended for internal use)

@@ -119,7 +119,7 @@ By default, the negative controls will be identified by variants labeled as `syn
 ```{r, warning=FALSE, message=FALSE}
 lilace_obj <- lilace_fit_model(lilace_obj, output_dir, control_label="synonymous", 
                                control_correction=T, use_positions=T, pseudocount=T,
-                               n_parallel_chains=4)
+                               n_parallel_chains=4, seed=1)
 ```
 Once it's done running, Lilace saves the scores for each variant to `output/lilace_output/variant_scores.tsv`. The scores dataframe is also saved in `lilace_obj$scores`. The scores are also combined with the input dataframe at `lilace_obj$fitted_data`.
 ```{r}
@@ -161,7 +161,7 @@ Without the negative control-based bias correction, the effect size standard err
 output_dir <- "output_no_nc_correction"
 # run the model on data
 fitted_data <- lilace_fit_model(lilace_obj, output_dir, control_label="synonymous", 
-                                control_correction=F)
+                                control_correction=F, seed=1)
 # read scores file
 scores <- read_tsv("output_no_nc_correction/lilace_output/variant_scores.tsv", show_col_types = FALSE)
 print(head(scores))
@@ -178,7 +178,7 @@ Without using position effects to inform variant effect estimates, each effect s
 output_dir <- "output_nopos"
 # run the model on data
 fitted_data <- lilace_fit_model(lilace_obj, output_dir, control_label="synonymous", 
-                                use_positions=F)
+                                use_positions=F, seed=1)
 # read scores file
 scores <- read_tsv("output_nopos/lilace_output/variant_scores.tsv", show_col_types = FALSE)
 print(head(scores))
@@ -189,10 +189,10 @@ lilace_score_heatmap(scores, output_dir, score.col="discovery05", name="discover
 ```
 
 ## View posterior samples
-For convenience and advanced analysis, the posterior samples are saved in `lilace_output/posterior_samples.RData`. They can be analyzed further with the `posterior` package. Here is an example of how to access them:
+For convenience and advanced analysis, the posterior samples are saved in `lilace_output/posterior_samples.rds`. They can be analyzed further with the `posterior` package. Here is an example of how to access them:
 ```{r, warning=FALSE, message=FALSE}
 library(posterior)
-draws <- readRDS("output/lilace_output/posterior_samples.RData")
+draws <- readRDS("output/lilace_output/posterior_samples.rds")
 posterior_samples <- posterior::as_draws_rvars(draws)
 head(posterior::draws_of(posterior_samples$a))
 ```

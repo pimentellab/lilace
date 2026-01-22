@@ -13,7 +13,8 @@ lilace_fit_model(
   pseudocount = TRUE,
   seed = NULL,
   min_total_counts = 15,
-  n_parallel_chains = 4
+  n_parallel_chains = 4,
+  nc_seed = NULL
 )
 }
 \arguments{
@@ -34,6 +35,8 @@ lilace_fit_model(
 \item{min_total_counts}{minimum total counts for a variant--anything less will be filtered out}
 
 \item{n_parallel_chains}{number of chains to run in parallel}
+
+\item{nc_seed}{negative control seed (default: same as seed param)}
 }
 \value{
 lilace object with $scores and $fitted_data entries

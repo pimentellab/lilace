@@ -59,7 +59,7 @@ NULL
   N <- nrow(data)
   nMAPv <- as.numeric(factor(data$variant))
   n_counts <- as.numeric(data$n_counts)
-  n_syn_counts <- as.numeric(data[data$type=="synonymous",]$n_counts)
+  n_syn_counts <- as.numeric(data[data$type==control_label,]$n_counts)
   distinct_df <- (distinct(data.frame(variant = data$variant, nMAPv = nMAPv,
                                       total_counts = data$total_counts, type=data$type)) %>%
                     arrange(nMAPv))
@@ -86,21 +86,21 @@ NULL
   }
 
   # encode negative control positions
-  vMAPp[vMAPp$type=="synonymous",]$position <- 0 # encode synonymous as diff position
-  S <- sum(vMAPp$type=="synonymous")
+  vMAPp[vMAPp$type==control_label,]$position <- 0 # encode synonymous as diff position
+  S <- sum(vMAPp$type==control_label)
   vMAPs <- rep(-1, nrow(vMAPp)) # -1 for non syn, o.w. each syn gets own index
-  vMAPs[vMAPp$type=="synonymous"] <- 1:S
+  vMAPs[vMAPp$type==control_label] <- 1:S
 
   vMAPp <- as.numeric(as.factor(vMAPp$position))
   P <- length(unique(vMAPp))
 
   R <- length(unique(data$rep))
   nMAPr <- as.numeric(factor(data$rep))
-  sMAPr <- nMAPr[data$type=="synonymous"]
+  sMAPr <- nMAPr[data$type==control_label]
   N_syn <- length(sMAPr)
 
   y <- as.matrix(data %>% dplyr::select(starts_with("c_")))
-  y_syn <- y[data$type=="synonymous",]
+  y_syn <- y[data$type==control_label,]
   K <- ncol(y)
 
   input <- list(V = V, S = S, N = N, N_syn=N_syn, P=P, R=R, nMAPv = nMAPv, vMAPs = vMAPs, nMAPr = nMAPr, vMAPp = vMAPp, sMAPr=sMAPr,
@@ -113,8 +113,12 @@ NULL
 #' @param data data
 #' @param input stan model input parameters
 #' @param control_label control label
+#' @param seed seed for negative control sampling
 #' @export
-.correct_negative_control <- function(mu, data, input, control_label) {
+.correct_negative_control <- function(mu, data, input, control_label, seed=NULL) {
+  if (!is.null(seed)) {
+    set.seed(seed)
+  }
   syn_mu <- as.matrix(mu[,unique(input$nMAPv[data$type==control_label])])
   syn_indices <- t(replicate(nrow(mu), sample.int(ncol(syn_mu), ncol(mu), replace=T)))
   mu2 <- matrix(NA, nrow=nrow(mu), ncol=ncol(mu))
@@ -182,13 +186,14 @@ NULL
 #' @param control_correction logical for whether to do negative control correction
 #' @param control_label label for negative control variant types
 #' @param use_positions logical for whether positions used in running Lilace
+#' @param nc_seed negative control correction seed
 #' @export
-.summarize_posteriors <- function(fit, data, input, control_correction, control_label, use_positions) {
+.summarize_posteriors <- function(fit, data, input, control_correction, control_label, use_positions, nc_seed=NULL) {
   # get effect size summary
   mu <- fit$draws(variables = "mu", format = "matrix")
   # apply negative control correction
   if (control_correction) {
-    mu <- .correct_negative_control(mu, data, input, control_label)
+    mu <- .correct_negative_control(mu, data, input, control_label, nc_seed)
   }
   mu_stats <- .get_mu_summary(mu, input$V)
   # get pos summary
@@ -245,6 +250,7 @@ NULL
 #' @param seed random seed for sampling process to get exactly reproducible results. A NULL value indicates no fixed seed.
 #' @param min_total_counts minimum total counts for a variant--anything less will be filtered out
 #' @param n_parallel_chains number of chains to run in parallel
+#' @param nc_seed negative control seed (default: same as seed param)
 #' @returns lilace object with $scores and $fitted_data entries
 #' @examples
 #' \dontrun{
@@ -253,7 +259,11 @@ NULL
 #' }
 #' @export
 lilace_fit_model <- function(lilace_obj, output_dir, control_label="synonymous", control_correction=TRUE,
-                             use_positions=TRUE, pseudocount=TRUE, seed=NULL, min_total_counts=15, n_parallel_chains=4) {
+                             use_positions=TRUE, pseudocount=TRUE, seed=NULL, min_total_counts=15, n_parallel_chains=4,
+                             nc_seed=NULL) {
+  if (is.null(nc_seed)) {
+    nc_seed <- seed
+  }
   if (!is.null(lilace_obj$normalized_data)) {
     data <- lilace_obj$normalized_data %>% ungroup()
     message("Running Lilace on sorting normalized counts")
@@ -298,7 +308,7 @@ lilace_fit_model <- function(lilace_obj, output_dir, control_label="synonymous",
   # save posterior samples to output_dir
   samples <- fit$draws(format = "df")
 
-  saveRDS(samples, file = file.path(output_folder, "posterior_samples.RData"))
+  saveRDS(samples, file = file.path(output_folder, "posterior_samples.rds"))
   sampling_diagnostics <- fit$diagnostic_summary()
   difftime <- end - start
   runtime <- paste(difftime, attr(difftime, "units"))
@@ -307,7 +317,7 @@ lilace_fit_model <- function(lilace_obj, output_dir, control_label="synonymous",
   write_yaml(sampling_diagnostics, file.path(output_folder, "/sampling_diagnostics.yaml"))
 
   # integrate scores with data and save to file
-  fit_df <- .summarize_posteriors(fit, data, input, control_correction, control_label, use_positions)
+  fit_df <- .summarize_posteriors(fit, data, input, control_correction, control_label, use_positions, nc_seed)
   lilace_obj$fitted_data <- fit_df
   lilace_obj <- .get_score_df(lilace_obj, use_positions)
   write_tsv(lilace_obj$scores, file.path(output_folder, "/variant_scores.tsv"))
