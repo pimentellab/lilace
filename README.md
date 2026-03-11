@@ -83,3 +83,12 @@ An introductory vignette can be found
 Lilace can be found [here](https://github.com/jermoef/lilace-VI). If you
 run into any problems, please submit an issue on github or email
 <jfreudenberg@ucla.edu>.
+
+## Citing Lilace
+
+If you use Lilace for your research, please cite our paper:
+
+> Freudenberg, J., Rao, J., Howard, M.K. *et al.* Accurate variant
+> effect estimation in FACS-based deep mutational scanning data with
+> Lilace. *Genome Biol* **27**, 48 (2026). DOI:
+> [10.1186/s13059-026-03934-1](https://doi.org/10.1186/s13059-026-03934-1)
