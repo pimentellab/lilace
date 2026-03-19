@@ -26,9 +26,13 @@ lilace_from_counts <- function(variant_id, mutation_type, position, replicate, c
   # all have same length as a variant_id
   data <- data.frame(variant=variant_id, metadata, type=mutation_type, position=position, rep=replicate, counts)
   # add count info
-  data$n_counts <- apply(data %>% dplyr::select(starts_with("c_")), 1, sum)
-  data <- data %>% group_by(.data$variant) %>% mutate(total_counts=sum(.data$n_counts))
-  data <- data %>% arrange(.data$position, .data$mutation)
+  data$n_counts <- rowSums(data %>% dplyr::select(starts_with("c_")), na.rm = TRUE)
+  data <- data %>% group_by(.data$variant) %>% mutate(total_counts=sum(.data$n_counts, na.rm=T)) %>% ungroup()
+  if ("mutation" %in% colnames(data)) {
+    data <- data %>% arrange(.data$position, .data$mutation)
+  } else {
+    data <- data %>% arrange(.data$position)
+  }
   # create lilace object
   lilace_obj <- list(data=data)
   lilace_obj$metadata_cols <- colnames(metadata)
@@ -57,7 +61,7 @@ lilace_from_enrich <- function(file, pheno="abundance") {
     dplyr::select(-.data$exp2) %>%
     pivot_wider(names_from = .data$time, values_from = .data$value)
 
-  data <- data %>% filter(.data$hgvs != "_wt")
+  data <- data %>% filter(!is.na(.data$hgvs) & .data$hgvs != "_wt")
 
   data <- data %>%
     mutate(
@@ -92,16 +96,22 @@ lilace_from_enrich <- function(file, pheno="abundance") {
   }
 
   data <- data %>%
-    rowwise() %>%
-    mutate(type = func_map(.data$wildtype, .data$mutation)) %>%
-    ungroup() %>%
+    mutate(type = case_when(
+      is.na(.data$wildtype) | is.na(.data$mutation) ~ NA_character_,
+      .data$wildtype == .data$mutation ~ "synonymous",
+      str_detect(.data$mutation, "del") ~ "deletion",
+      str_detect(.data$mutation, "ins") ~ "insertion",
+      TRUE ~ "missense"
+    )) %>%
     arrange(.data$position) %>%
     dplyr::select(1, all_of(8:11), all_of(4:7), all_of(2:3))
+
+
   colnames(data)[colnames(data) == "hgvs"] <- "variant"
   # add count info
-  data <- data[data$exp==pheno,]
-  data$n_counts <- apply(data %>% dplyr::select(starts_with("c_")), 1, sum)
-  data <- data %>% group_by(.data$variant) %>% mutate(total_counts=sum(.data$n_counts))
+  data <- data %>% filter(.data$exp == pheno)
+  data$n_counts <- rowSums(data %>% dplyr::select(starts_with("c_")), na.rm = TRUE)
+  data <- data %>% group_by(.data$variant) %>% mutate(total_counts=sum(.data$n_counts, na.rm=T)) %>% ungroup()
   # create lilace object
   lilace_obj <- list(data=data)
   return(lilace_obj)
@@ -173,7 +183,7 @@ lilace_from_files <- function(file_list, variant_id_col="hgvs", position_col="po
 #' @export
 lilace_sorting_normalize <- function(lilace_obj, sort_prop, rep_specific) {
   data <- lilace_obj$data %>% ungroup()
-  rep_set <- unique(data$rep)
+  rep_set <- unique(data$rep[!is.na(data$rep)])
   # check if rep specific that sort prop labels correspond to lilace_obj$data labels
   if (rep_specific) {
     for (rep in rep_set) {
@@ -183,32 +193,33 @@ lilace_sorting_normalize <- function(lilace_obj, sort_prop, rep_specific) {
     }
   }
   # check actually proportions
-  if (!rep_specific && sum(sort_prop) != 1) {
-    warning(paste0("Sorting proportions sum up to ", sum(sort_prop), " instead of 1."))
-    sort_prop <- sort_prop / sum(sort_prop) # normalize to actual percents
+  if (!rep_specific && sum(sort_prop, na.rm=T) != 1) {
+    warning(paste0("Sorting proportions sum up to ", sum(sort_prop, na.rm=T), " instead of 1."))
+    sort_prop <- sort_prop / sum(sort_prop, na.rm=T) # normalize to actual percents
   }
 
   # normalization
   K <- ncol(data %>% dplyr::select(starts_with("c_")))
   for (rep in rep_set) {
-    if (rep_specific && sum(sort_prop[[rep]]) != 1) {
-      warning(paste0("Sorting proportions sum up to ", sum(sort_prop[[rep]]), " instead of 1."))
-      sort_prop[[rep]] <- sort_prop[[rep]] / sum(sort_prop[[rep]]) # normalize to actual percents
+    if (rep_specific && sum(sort_prop[[rep]], na.rm=T) != 1) {
+      warning(paste0("Sorting proportions sum up to ", sum(sort_prop[[rep]], na.rm=T), " instead of 1."))
+      sort_prop[[rep]] <- sort_prop[[rep]] / sum(sort_prop[[rep]], na.rm=T) # normalize to actual percents
     }
-    rep_total <- sum(data[data$rep==rep,paste0("c_", (1:K)-1)])
+    idx <- which(data$rep == rep)
+    rep_total <- sum(data[idx,paste0("c_", (1:K)-1)], na.rm=T)
     for (i in 1:K) {
       bin <- paste0("c_", 0:(K-1))[i]
       if (rep_specific) {
-        rescaled_bin_total <- (sort_prop[[rep]] / sum(sort_prop[[rep]])) * rep_total
+        rescaled_bin_total <- (sort_prop[[rep]] / sum(sort_prop[[rep]], na.rm=T)) * rep_total
       } else {
         rescaled_bin_total <- sort_prop * rep_total
       }
-      data[data$rep==rep,][[bin]] <- ceiling(data[data$rep==rep,][[bin]] / sum(data[data$rep==rep,][[bin]]) * rescaled_bin_total[i])
+      data[[bin]][idx] <- ceiling(data[[bin]][idx] / sum(data[[bin]][idx], na.rm=T) * rescaled_bin_total[i])
     }
   }
   # recalculate count info
-  data$n_counts <- apply(data %>% dplyr::select(starts_with("c_")), 1, sum)
-  data <- data %>% group_by(.data$variant) %>% mutate(total_counts=sum(.data$n_counts))
+  data$n_counts <- rowSums(data %>% dplyr::select(starts_with("c_")), na.rm = TRUE)
+  data <- data %>% group_by(.data$variant) %>% mutate(total_counts=sum(.data$n_counts, na.rm=T)) %>% ungroup()
   lilace_obj$normalized_data <- data
   return(lilace_obj)
 }
