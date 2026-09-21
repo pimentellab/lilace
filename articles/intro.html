@@ -7,8 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Introduction to Lilace • lilace</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="../deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Introduction to Lilace">
 </head>
@@ -59,7 +59,7 @@
                         <h4 data-toc-skip class="author">Jerome
 Freudenberg</h4>
             
-            <h4 data-toc-skip class="date">March 18 2026</h4>
+            <h4 data-toc-skip class="date">September 21 2026</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/jermoef/lilace/blob/HEAD/vignettes/intro.Rmd" class="external-link"><code>vignettes/intro.Rmd</code></a></small>
       <div class="d-none name"><code>intro.Rmd</code></div>
@@ -159,7 +159,6 @@ identify the negative controls</li>
 <span>                      metadata<span class="op">=</span><span class="va">dataset</span> <span class="op">%&gt;%</span> <span class="fu">select</span><span class="op">(</span><span class="va">wildtype</span>, <span class="va">mutation</span>, <span class="va">exp</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">lilace_obj</span><span class="op">$</span><span class="va">data</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 6 × 13</span></span></span>
-<span><span class="co">## <span style="color: #949494;"># Groups:   variant [2]</span></span></span>
 <span><span class="co">##   variant wildtype mutation exp   type    position rep     c_0   c_1   c_2   c_3</span></span>
 <span><span class="co">##   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
 <span><span class="co">## <span style="color: #BCBCBC;">1</span> p.(G2A) G        A        ph55  missen…        2 R1      118   146   215   260</span></span>
@@ -201,7 +200,6 @@ they are scaled to add up to 1 internally.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">lilace_obj</span><span class="op">$</span><span class="va">normalized_data</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 6 × 13</span></span></span>
-<span><span class="co">## <span style="color: #949494;"># Groups:   variant [2]</span></span></span>
 <span><span class="co">##   variant wildtype mutation exp   type    position rep     c_0   c_1   c_2   c_3</span></span>
 <span><span class="co">##   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
 <span><span class="co">## <span style="color: #BCBCBC;">1</span> p.(G2A) G        A        ph55  missen…        2 R1      177   164   199   160</span></span>
@@ -230,7 +228,6 @@ R2, R3) should correspond to the labels used in the Lilace input.</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">lilace_obj</span><span class="op">$</span><span class="va">normalized_data</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 6 × 13</span></span></span>
-<span><span class="co">## <span style="color: #949494;"># Groups:   variant [2]</span></span></span>
 <span><span class="co">##   variant wildtype mutation exp   type    position rep     c_0   c_1   c_2   c_3</span></span>
 <span><span class="co">##   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
 <span><span class="co">## <span style="color: #BCBCBC;">1</span> p.(G2A) G        A        ph55  missen…        2 R1      177   164   199   160</span></span>
@@ -299,21 +296,21 @@ outputs for both of these options towards the end of the vignette.</p>
 <span><span class="co">## Chain 4 Iteration: 1250 / 2000 [ 62%]  (Sampling) </span></span>
 <span><span class="co">## Chain 2 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
 <span><span class="co">## Chain 3 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 3 finished in 91.8 seconds.</span></span>
+<span><span class="co">## Chain 3 finished in 91.6 seconds.</span></span>
 <span><span class="co">## Chain 1 Iteration: 1500 / 2000 [ 75%]  (Sampling) </span></span>
 <span><span class="co">## Chain 2 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
 <span><span class="co">## Chain 2 finished in 94.7 seconds.</span></span>
 <span><span class="co">## Chain 4 Iteration: 1500 / 2000 [ 75%]  (Sampling) </span></span>
 <span><span class="co">## Chain 1 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
 <span><span class="co">## Chain 1 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 1 finished in 126.3 seconds.</span></span>
+<span><span class="co">## Chain 1 finished in 126.2 seconds.</span></span>
 <span><span class="co">## Chain 4 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
 <span><span class="co">## Chain 4 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 4 finished in 152.6 seconds.</span></span>
+<span><span class="co">## Chain 4 finished in 152.8 seconds.</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## All 4 chains finished successfully.</span></span>
 <span><span class="co">## Mean chain execution time: 116.3 seconds.</span></span>
-<span><span class="co">## Total execution time: 152.7 seconds.</span></span></code></pre>
+<span><span class="co">## Total execution time: 152.9 seconds.</span></span></code></pre>
 <p>Once it’s done running, Lilace saves the scores for each variant to
 <code>output/lilace_output/variant_scores.tsv</code>. The scores
 dataframe is also saved in <code>lilace_obj$scores</code>. The scores
@@ -323,14 +320,14 @@ are also combined with the input dataframe at
 <code class="sourceCode R"><span><span class="va">scores</span> <span class="op">&lt;-</span> <span class="fu">read_tsv</span><span class="op">(</span><span class="st">"output/lilace_output/variant_scores.tsv"</span>, show_col_types <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">scores</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 6 × 12</span></span></span>
-<span><span class="co">##   variant        type   wildtype mutation exp   position  effect effect_se  lfsr</span></span>
-<span><span class="co">##   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">1</span> p.(G2del)      delet… G        del0     ph55         2 -<span style="color: #BB0000;">0.067</span><span style="color: #BB0000; text-decoration: underline;">7</span>     0.281 0.384</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">2</span> p.(G2_N3del)   delet… G        del1     ph55         2  0.348      0.284 0.096</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">3</span> p.(G2_I4del)   delet… G        del2     ph55         2  0.229      0.287 0.209</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">4</span> p.(G2_N3insG)  inser… G        ins0     ph55         2  0.269      0.280 0.156</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">5</span> p.(G2_N3insGS) inser… G        ins1     ph55         2  0.097<span style="text-decoration: underline;">8</span>     0.272 0.361</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">6</span> p.(G2A)        misse… G        A        ph55         2  0.107      0.283 0.368</span></span>
+<span><span class="co">##   variant        type  wildtype mutation exp   position  effect effect_se   lfsr</span></span>
+<span><span class="co">##   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">1</span> p.(G2del)      dele… G        del0     ph55         2 -<span style="color: #BB0000;">0.071</span><span style="color: #BB0000; text-decoration: underline;">9</span>     0.285 0.374 </span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">2</span> p.(G2_N3del)   dele… G        del1     ph55         2  0.349      0.285 0.097<span style="text-decoration: underline;">8</span></span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">3</span> p.(G2_I4del)   dele… G        del2     ph55         2  0.228      0.285 0.205 </span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">4</span> p.(G2_N3insG)  inse… G        ins0     ph55         2  0.281      0.281 0.151 </span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">5</span> p.(G2_N3insGS) inse… G        ins1     ph55         2  0.104      0.282 0.367 </span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">6</span> p.(G2A)        miss… G        A        ph55         2  0.104      0.282 0.362 </span></span>
 <span><span class="co">## <span style="color: #949494;"># ℹ 3 more variables: pos_mean &lt;dbl&gt;, pos_sd &lt;dbl&gt;, discovery05 &lt;dbl&gt;</span></span></span></code></pre>
 <p>The <code>effect</code> column represents the estimated effect size /
 score for a variant, while <code>effect_se</code> gives the standard
@@ -356,7 +353,7 @@ expectations.</p>
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/lilace_score_density.html">lilace_score_density</a></span><span class="op">(</span><span class="va">scores</span>, <span class="va">output_dir</span>, score.col<span class="op">=</span><span class="st">"effect"</span>, </span>
 <span>                     name<span class="op">=</span><span class="st">"score_histogram"</span>, hist<span class="op">=</span><span class="cn">T</span>, scale.free<span class="op">=</span><span class="cn">T</span><span class="op">)</span></span></code></pre></div>
-<p><img src="intro_files/figure-html/unnamed-chunk-13-1.png" width="700"></p>
+<p><img src="intro_files/figure-html/unnamed-chunk-13-1.png" class="r-plt" alt="" width="700"></p>
 <p>We observe a substantial LOF mode for indels, a smaller one for
 missense mutations, and a distribution around zero for synonymous
 mutations.</p>
@@ -364,7 +361,7 @@ mutations.</p>
 <div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/lilace_score_heatmap.html">lilace_score_heatmap</a></span><span class="op">(</span><span class="va">scores</span>, <span class="va">output_dir</span>, score.col<span class="op">=</span><span class="st">"effect"</span>, name<span class="op">=</span><span class="st">"score_heatmap"</span>, </span>
 <span>                     x.text<span class="op">=</span><span class="fl">4</span>, seq.text<span class="op">=</span><span class="fl">1.5</span>, y.text<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span></code></pre></div>
-<p><img src="intro_files/figure-html/unnamed-chunk-14-1.png" width="700"></p>
+<p><img src="intro_files/figure-html/unnamed-chunk-14-1.png" class="r-plt" alt="" width="700"></p>
 <p>As well as the discoveries, at a threshold of
 <code>lfsr &lt; 0.05</code>. Again, -1 indicates a significant leftward
 shift in fluorescence, +1 a rightward shift, and 0 is not
@@ -372,7 +369,7 @@ significant.</p>
 <div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/lilace_score_heatmap.html">lilace_score_heatmap</a></span><span class="op">(</span><span class="va">scores</span>, <span class="va">output_dir</span>, score.col<span class="op">=</span><span class="st">"discovery05"</span>, name<span class="op">=</span><span class="st">"discovery05_heatmap"</span>, </span>
 <span>                     x.text<span class="op">=</span><span class="fl">4</span>, seq.text<span class="op">=</span><span class="fl">1.5</span>, y.text<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span></code></pre></div>
-<p><img src="intro_files/figure-html/unnamed-chunk-15-1.png" width="700"></p>
+<p><img src="intro_files/figure-html/unnamed-chunk-15-1.png" class="r-plt" alt="" width="700"></p>
 <p>From here on, further analysis can be done, such as mapping to
 protein structure and qualitatively analyzing the results.</p>
 </div>
@@ -411,19 +408,19 @@ score against)</p>
 <span><span class="co">## Chain 4 Iteration:  250 / 2000 [ 12%]  (Warmup) </span></span>
 <span><span class="co">## Chain 3 Iteration:  500 / 2000 [ 25%]  (Warmup) </span></span>
 <span><span class="co">## Chain 2 Iteration:  500 / 2000 [ 25%]  (Warmup) </span></span>
-<span><span class="co">## Chain 4 Iteration:  500 / 2000 [ 25%]  (Warmup) </span></span>
 <span><span class="co">## Chain 1 Iteration:  500 / 2000 [ 25%]  (Warmup) </span></span>
+<span><span class="co">## Chain 4 Iteration:  500 / 2000 [ 25%]  (Warmup) </span></span>
 <span><span class="co">## Chain 3 Iteration:  750 / 2000 [ 37%]  (Warmup) </span></span>
-<span><span class="co">## Chain 2 Iteration:  750 / 2000 [ 37%]  (Warmup) </span></span>
 <span><span class="co">## Chain 1 Iteration:  750 / 2000 [ 37%]  (Warmup) </span></span>
+<span><span class="co">## Chain 2 Iteration:  750 / 2000 [ 37%]  (Warmup) </span></span>
 <span><span class="co">## Chain 4 Iteration:  750 / 2000 [ 37%]  (Warmup) </span></span>
 <span><span class="co">## Chain 3 Iteration: 1000 / 2000 [ 50%]  (Warmup) </span></span>
 <span><span class="co">## Chain 3 Iteration: 1001 / 2000 [ 50%]  (Sampling) </span></span>
+<span><span class="co">## Chain 1 Iteration: 1000 / 2000 [ 50%]  (Warmup) </span></span>
+<span><span class="co">## Chain 1 Iteration: 1001 / 2000 [ 50%]  (Sampling) </span></span>
 <span><span class="co">## Chain 2 Iteration: 1000 / 2000 [ 50%]  (Warmup) </span></span>
 <span><span class="co">## Chain 2 Iteration: 1001 / 2000 [ 50%]  (Sampling) </span></span>
-<span><span class="co">## Chain 1 Iteration: 1000 / 2000 [ 50%]  (Warmup) </span></span>
 <span><span class="co">## Chain 4 Iteration: 1000 / 2000 [ 50%]  (Warmup) </span></span>
-<span><span class="co">## Chain 1 Iteration: 1001 / 2000 [ 50%]  (Sampling) </span></span>
 <span><span class="co">## Chain 4 Iteration: 1001 / 2000 [ 50%]  (Sampling) </span></span>
 <span><span class="co">## Chain 3 Iteration: 1250 / 2000 [ 62%]  (Sampling) </span></span>
 <span><span class="co">## Chain 2 Iteration: 1250 / 2000 [ 62%]  (Sampling) </span></span>
@@ -434,21 +431,21 @@ score against)</p>
 <span><span class="co">## Chain 4 Iteration: 1250 / 2000 [ 62%]  (Sampling) </span></span>
 <span><span class="co">## Chain 2 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
 <span><span class="co">## Chain 3 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 3 finished in 88.3 seconds.</span></span>
+<span><span class="co">## Chain 3 finished in 88.4 seconds.</span></span>
 <span><span class="co">## Chain 1 Iteration: 1500 / 2000 [ 75%]  (Sampling) </span></span>
 <span><span class="co">## Chain 2 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 2 finished in 91.0 seconds.</span></span>
+<span><span class="co">## Chain 2 finished in 93.4 seconds.</span></span>
 <span><span class="co">## Chain 4 Iteration: 1500 / 2000 [ 75%]  (Sampling) </span></span>
 <span><span class="co">## Chain 1 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
 <span><span class="co">## Chain 1 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 1 finished in 122.4 seconds.</span></span>
+<span><span class="co">## Chain 1 finished in 123.2 seconds.</span></span>
 <span><span class="co">## Chain 4 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
 <span><span class="co">## Chain 4 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 4 finished in 148.0 seconds.</span></span>
+<span><span class="co">## Chain 4 finished in 150.7 seconds.</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## All 4 chains finished successfully.</span></span>
-<span><span class="co">## Mean chain execution time: 112.4 seconds.</span></span>
-<span><span class="co">## Total execution time: 148.2 seconds.</span></span></code></pre>
+<span><span class="co">## Mean chain execution time: 114.0 seconds.</span></span>
+<span><span class="co">## Total execution time: 150.9 seconds.</span></span></code></pre>
 <div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># read scores file</span></span>
 <span><span class="va">scores</span> <span class="op">&lt;-</span> <span class="fu">read_tsv</span><span class="op">(</span><span class="st">"output_no_nc_correction/lilace_output/variant_scores.tsv"</span>, show_col_types <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
@@ -466,11 +463,11 @@ score against)</p>
 <div class="sourceCode" id="cb29"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/lilace_score_heatmap.html">lilace_score_heatmap</a></span><span class="op">(</span><span class="va">scores</span>, <span class="va">output_dir</span>, score.col<span class="op">=</span><span class="st">"effect"</span>, name<span class="op">=</span><span class="st">"score_heatmap"</span>, </span>
 <span>                     x.text<span class="op">=</span><span class="fl">4</span>, seq.text<span class="op">=</span><span class="fl">1.5</span>, y.text<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span></code></pre></div>
-<p><img src="intro_files/figure-html/unnamed-chunk-16-1.png" width="700"></p>
+<p><img src="intro_files/figure-html/unnamed-chunk-16-1.png" class="r-plt" alt="" width="700"></p>
 <div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/lilace_score_heatmap.html">lilace_score_heatmap</a></span><span class="op">(</span><span class="va">scores</span>, <span class="va">output_dir</span>, score.col<span class="op">=</span><span class="st">"discovery05"</span>, name<span class="op">=</span><span class="st">"discovery05_heatmap"</span>, </span>
 <span>                     x.text<span class="op">=</span><span class="fl">4</span>, seq.text<span class="op">=</span><span class="fl">1.5</span>, y.text<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span></code></pre></div>
-<p><img src="intro_files/figure-html/unnamed-chunk-16-2.png" width="700"></p>
+<p><img src="intro_files/figure-html/unnamed-chunk-16-2.png" class="r-plt" alt="" width="700"></p>
 </div>
 <div class="section level4">
 <h4 id="without-the-position-hierarchy">Without the position hierarchy<a class="anchor" aria-label="anchor" href="#without-the-position-hierarchy"></a>
@@ -498,67 +495,67 @@ effects at a position as a line of evidence).</p>
 <span><span class="co">## Chain 3 Iteration:  250 / 2000 [ 12%]  (Warmup) </span></span>
 <span><span class="co">## Chain 2 Iteration:  250 / 2000 [ 12%]  (Warmup) </span></span>
 <span><span class="co">## Chain 4 Iteration:  500 / 2000 [ 25%]  (Warmup) </span></span>
+<span><span class="co">## Chain 1 Iteration:  500 / 2000 [ 25%]  (Warmup) </span></span>
 <span><span class="co">## Chain 3 Iteration:  500 / 2000 [ 25%]  (Warmup) </span></span>
 <span><span class="co">## Chain 2 Iteration:  500 / 2000 [ 25%]  (Warmup) </span></span>
-<span><span class="co">## Chain 1 Iteration:  500 / 2000 [ 25%]  (Warmup) </span></span>
 <span><span class="co">## Chain 4 Iteration:  750 / 2000 [ 37%]  (Warmup) </span></span>
 <span><span class="co">## Chain 3 Iteration:  750 / 2000 [ 37%]  (Warmup) </span></span>
-<span><span class="co">## Chain 2 Iteration:  750 / 2000 [ 37%]  (Warmup) </span></span>
 <span><span class="co">## Chain 1 Iteration:  750 / 2000 [ 37%]  (Warmup) </span></span>
+<span><span class="co">## Chain 2 Iteration:  750 / 2000 [ 37%]  (Warmup) </span></span>
 <span><span class="co">## Chain 4 Iteration: 1000 / 2000 [ 50%]  (Warmup) </span></span>
 <span><span class="co">## Chain 4 Iteration: 1001 / 2000 [ 50%]  (Sampling) </span></span>
-<span><span class="co">## Chain 3 Iteration: 1000 / 2000 [ 50%]  (Warmup) </span></span>
-<span><span class="co">## Chain 3 Iteration: 1001 / 2000 [ 50%]  (Sampling) </span></span>
-<span><span class="co">## Chain 2 Iteration: 1000 / 2000 [ 50%]  (Warmup) </span></span>
-<span><span class="co">## Chain 2 Iteration: 1001 / 2000 [ 50%]  (Sampling) </span></span>
 <span><span class="co">## Chain 1 Iteration: 1000 / 2000 [ 50%]  (Warmup) </span></span>
 <span><span class="co">## Chain 1 Iteration: 1001 / 2000 [ 50%]  (Sampling) </span></span>
+<span><span class="co">## Chain 2 Iteration: 1000 / 2000 [ 50%]  (Warmup) </span></span>
+<span><span class="co">## Chain 3 Iteration: 1000 / 2000 [ 50%]  (Warmup) </span></span>
+<span><span class="co">## Chain 3 Iteration: 1001 / 2000 [ 50%]  (Sampling) </span></span>
+<span><span class="co">## Chain 2 Iteration: 1001 / 2000 [ 50%]  (Sampling) </span></span>
 <span><span class="co">## Chain 4 Iteration: 1250 / 2000 [ 62%]  (Sampling) </span></span>
+<span><span class="co">## Chain 1 Iteration: 1250 / 2000 [ 62%]  (Sampling) </span></span>
 <span><span class="co">## Chain 3 Iteration: 1250 / 2000 [ 62%]  (Sampling) </span></span>
 <span><span class="co">## Chain 2 Iteration: 1250 / 2000 [ 62%]  (Sampling) </span></span>
-<span><span class="co">## Chain 1 Iteration: 1250 / 2000 [ 62%]  (Sampling) </span></span>
 <span><span class="co">## Chain 4 Iteration: 1500 / 2000 [ 75%]  (Sampling) </span></span>
+<span><span class="co">## Chain 1 Iteration: 1500 / 2000 [ 75%]  (Sampling) </span></span>
 <span><span class="co">## Chain 3 Iteration: 1500 / 2000 [ 75%]  (Sampling) </span></span>
 <span><span class="co">## Chain 2 Iteration: 1500 / 2000 [ 75%]  (Sampling) </span></span>
-<span><span class="co">## Chain 1 Iteration: 1500 / 2000 [ 75%]  (Sampling) </span></span>
 <span><span class="co">## Chain 4 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
+<span><span class="co">## Chain 1 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
 <span><span class="co">## Chain 3 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
 <span><span class="co">## Chain 2 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
-<span><span class="co">## Chain 1 Iteration: 1750 / 2000 [ 87%]  (Sampling) </span></span>
 <span><span class="co">## Chain 4 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 4 finished in 91.9 seconds.</span></span>
-<span><span class="co">## Chain 3 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 3 finished in 96.2 seconds.</span></span>
-<span><span class="co">## Chain 2 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 2 finished in 96.6 seconds.</span></span>
+<span><span class="co">## Chain 4 finished in 92.1 seconds.</span></span>
 <span><span class="co">## Chain 1 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
-<span><span class="co">## Chain 1 finished in 97.0 seconds.</span></span>
+<span><span class="co">## Chain 1 finished in 93.6 seconds.</span></span>
+<span><span class="co">## Chain 3 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
+<span><span class="co">## Chain 3 finished in 93.9 seconds.</span></span>
+<span><span class="co">## Chain 2 Iteration: 2000 / 2000 [100%]  (Sampling) </span></span>
+<span><span class="co">## Chain 2 finished in 94.1 seconds.</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">## All 4 chains finished successfully.</span></span>
-<span><span class="co">## Mean chain execution time: 95.4 seconds.</span></span>
-<span><span class="co">## Total execution time: 97.1 seconds.</span></span></code></pre>
+<span><span class="co">## Mean chain execution time: 93.4 seconds.</span></span>
+<span><span class="co">## Total execution time: 94.3 seconds.</span></span></code></pre>
 <div class="sourceCode" id="cb33"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># read scores file</span></span>
 <span><span class="va">scores</span> <span class="op">&lt;-</span> <span class="fu">read_tsv</span><span class="op">(</span><span class="st">"output_nopos/lilace_output/variant_scores.tsv"</span>, show_col_types <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">scores</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 6 × 10</span></span></span>
-<span><span class="co">##   variant        type   wildtype mutation exp   position  effect effect_se  lfsr</span></span>
-<span><span class="co">##   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">1</span> p.(G2del)      delet… G        del0     ph55         2 -<span style="color: #BB0000;">0.191</span>      0.291 0.236</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">2</span> p.(G2_N3del)   delet… G        del1     ph55         2  0.448      0.297 0.054</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">3</span> p.(G2_I4del)   delet… G        del2     ph55         2  0.243      0.287 0.192</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">4</span> p.(G2_N3insG)  inser… G        ins0     ph55         2  0.318      0.287 0.129</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">5</span> p.(G2_N3insGS) inser… G        ins1     ph55         2  0.085<span style="text-decoration: underline;">5</span>     0.281 0.396</span></span>
-<span><span class="co">## <span style="color: #BCBCBC;">6</span> p.(G2A)        misse… G        A        ph55         2  0.072<span style="text-decoration: underline;">5</span>     0.292 0.420</span></span>
+<span><span class="co">##   variant        type  wildtype mutation exp   position  effect effect_se   lfsr</span></span>
+<span><span class="co">##   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">1</span> p.(G2del)      dele… G        del0     ph55         2 -<span style="color: #BB0000;">0.201</span>      0.295 0.232 </span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">2</span> p.(G2_N3del)   dele… G        del1     ph55         2  0.449      0.298 0.057<span style="text-decoration: underline;">5</span></span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">3</span> p.(G2_I4del)   dele… G        del2     ph55         2  0.247      0.292 0.191 </span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">4</span> p.(G2_N3insG)  inse… G        ins0     ph55         2  0.323      0.295 0.128 </span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">5</span> p.(G2_N3insGS) inse… G        ins1     ph55         2  0.082<span style="text-decoration: underline;">6</span>     0.288 0.398 </span></span>
+<span><span class="co">## <span style="color: #BCBCBC;">6</span> p.(G2A)        miss… G        A        ph55         2  0.066<span style="text-decoration: underline;">3</span>     0.297 0.420 </span></span>
 <span><span class="co">## <span style="color: #949494;"># ℹ 1 more variable: discovery05 &lt;dbl&gt;</span></span></span></code></pre>
 <div class="sourceCode" id="cb35"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/lilace_score_heatmap.html">lilace_score_heatmap</a></span><span class="op">(</span><span class="va">scores</span>, <span class="va">output_dir</span>, score.col<span class="op">=</span><span class="st">"effect"</span>, name<span class="op">=</span><span class="st">"score_heatmap"</span>, </span>
 <span>                     x.text<span class="op">=</span><span class="fl">4</span>, seq.text<span class="op">=</span><span class="fl">1.5</span>, y.text<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span></code></pre></div>
-<p><img src="intro_files/figure-html/unnamed-chunk-17-1.png" width="700"></p>
+<p><img src="intro_files/figure-html/unnamed-chunk-17-1.png" class="r-plt" alt="" width="700"></p>
 <div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/lilace_score_heatmap.html">lilace_score_heatmap</a></span><span class="op">(</span><span class="va">scores</span>, <span class="va">output_dir</span>, score.col<span class="op">=</span><span class="st">"discovery05"</span>, name<span class="op">=</span><span class="st">"discovery05_heatmap"</span>, </span>
 <span>                     x.text<span class="op">=</span><span class="fl">4</span>, seq.text<span class="op">=</span><span class="fl">1.5</span>, y.text<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span></code></pre></div>
-<p><img src="intro_files/figure-html/unnamed-chunk-17-2.png" width="700"></p>
+<p><img src="intro_files/figure-html/unnamed-chunk-17-2.png" class="r-plt" alt="" width="700"></p>
 </div>
 </div>
 <div class="section level2">
@@ -593,7 +590,6 @@ processing counts with Enrich2. <img src="enrich_format.png" style="width:60.0%"
 <div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">lilace_obj_from_enrich</span><span class="op">$</span><span class="va">data</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 6 × 13</span></span></span>
-<span><span class="co">## <span style="color: #949494;"># Groups:   variant [2]</span></span></span>
 <span><span class="co">##   variant  position wildtype mutation type     c_0   c_1   c_2   c_3 exp   rep  </span></span>
 <span><span class="co">##   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
 <span><span class="co">## <span style="color: #BCBCBC;">1</span> p.(A22A)       22 A        A        synon…   116   181   176   278 abun… R1   </span></span>
@@ -637,7 +633,6 @@ counts from bin 1 in replicate 1 could look like: <img src="sep_file_counts.png"
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">lilace_obj_from_multi_file</span><span class="op">$</span><span class="va">data</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## <span style="color: #949494;"># A tibble: 6 × 12</span></span></span>
-<span><span class="co">## <span style="color: #949494;"># Groups:   variant [3]</span></span></span>
 <span><span class="co">##   variant wildtype mutation type     position rep     c_0   c_1   c_2   c_3</span></span>
 <span><span class="co">##   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span></span>
 <span><span class="co">## <span style="color: #BCBCBC;">1</span> p.(G2A) G        A        missense        2 R1      118   146   215   260</span></span>
@@ -646,7 +641,7 @@ counts from bin 1 in replicate 1 could look like: <img src="sep_file_counts.png"
 <span><span class="co">## <span style="color: #BCBCBC;">4</span> p.(G2C) G        C        missense        2 R2      203   201   307   616</span></span>
 <span><span class="co">## <span style="color: #BCBCBC;">5</span> p.(G2D) G        D        missense        2 R1      201   185   212   328</span></span>
 <span><span class="co">## <span style="color: #BCBCBC;">6</span> p.(G2D) G        D        missense        2 R2      176   142   119   343</span></span>
-<span><span class="co">## <span style="color: #949494;"># ℹ 2 more variables: n_counts &lt;int&gt;, total_counts &lt;int&gt;</span></span></span></code></pre>
+<span><span class="co">## <span style="color: #949494;"># ℹ 2 more variables: n_counts &lt;dbl&gt;, total_counts &lt;dbl&gt;</span></span></span></code></pre>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
@@ -659,7 +654,7 @@ counts from bin 1 in replicate 1 could look like: <img src="sep_file_counts.png"
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
     </footer>
