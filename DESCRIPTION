@@ -4,7 +4,7 @@ Title: Analyze FACS-based Deep Mutational Scanning Data
 Version: 1.0.0
 Authors@R: person("Jerome", "Freudenberg", email = "jfreudenberg@ucla.edu",
                   role = c("aut", "cre"),
-                  comment=c(ORCID=0009-0004-7464-8333))
+                  comment=c(ORCID="0009-0004-7464-8333"))
 Description: A Bayesian hierarchical model for estimating variant effect sizes and uncertainty from FACS-based DMS data.
 License: MIT + file LICENSE
 Encoding: UTF-8
